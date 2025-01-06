@@ -25,7 +25,7 @@ He has developed widely adopted statistical methods—such as synthetic control 
 
 Hainmueller’s contributions have earned him various awards, including the Gosnell Prize for Excellence in Political Methodology, the Warren Miller Prize, the Robert H. Durr Award, and the Emerging Scholar Award from the Society of Political Methodology. He is an Andrew Carnegie Fellow, an elected Fellow of the Society of Political Methodology, and holds an honorary degree from the European University Institute (EUI).
 
-He completed his PhD from Harvard University, with additional studies at the London School of Economics, Brown University, and the University of Tuebingen. Before joining Stanford, he was a faculty member at the Massachusetts Institute of Technology (MIT).
+He completed his PhD at Harvard University, with additional studies at the London School of Economics, Brown University, and the University of Tuebingen. Before joining Stanford, he was a faculty member at the Massachusetts Institute of Technology (MIT).
 
 
 
