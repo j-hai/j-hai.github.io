@@ -17,7 +17,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Jens Hainmueller is the Kimberly Glenn Professor of Political Science and Director of Graduate Studies in Stanford University’s Department of Political Science. He co-directs the [Stanford Immigration Policy Lab](https://immigrationlab.org/) and is a Faculty Affiliate at the Stanford Center for Causal Science, the Institute for Human-Centered Artificial Intelligence, and the Europe Center. He is also a member of the Maternal Child Health Research Institute at Stanford’s School of Medicine.
+Jens Hainmueller is the Kimberly Glenn Professor of Political Science and Director of Graduate Studies in Stanford's [Department of Political Science](https://politicalscience.stanford.edu/). He co-directs the [Stanford Immigration Policy Lab](https://immigrationlab.org/) and is a Faculty Affiliate at the [Stanford Center for Causal Science](https://datascience.stanford.edu/causal), the [Institute for Human-Centered Artificial Intelligence](https://hai.stanford.edu/), and the [Europe Center](https://tec.fsi.stanford.edu/). He is also a member of the [Maternal Child Health Research Institute](https://med.stanford.edu/mchri.html) at Stanford’s School of Medicine.
 
 Hainmueller’s research spans statistical methods, causal inference, immigration, and political economy, and he has published nearly 70 articles with over 40,000 citations. Many of his works appear in top journals, including Science, Nature, and PNAS, as well as leading field journals in political science, statistics, economics, and business.
 
@@ -27,10 +27,3 @@ Hainmueller’s contributions have earned him various awards, including the Gosn
 
 He completed his PhD at Harvard University, with additional studies at the London School of Economics, Brown University, and the University of Tuebingen. Before joining Stanford, he was a faculty member at the Massachusetts Institute of Technology (MIT).
 
-
-
-# Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-# Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-# Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
