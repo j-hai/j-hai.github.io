@@ -23,7 +23,7 @@ Hainmueller’s research spans statistical methods, causal inference, immigratio
 
 He has developed widely adopted statistical methods—such as synthetic control methods, entropy balancing, Average Marginal Component Effects, and GeoMatch algorithms—and created several open-source software packages that support empirical research across disciplines. At Stanford, he teaches courses on causal inference and data science.
 
-Hainmueller’s contributions have been recognized with various awards, including the Gosnell Prize for Excellence in Political Methodology, the Warren Miller Prize, the Robert H. Durr Award, and the Emerging Scholar Award from the Society of Political Methodology. He is an Andrew Carnegie Fellow, an elected Fellow of the Society of Political Methodology, and holds an honorary degree from the European University Institute (EUI).
+Hainmueller’s contributions have been recognized with various awards, including the Gosnell Prize for Excellence in Political Methodology, the Warren Miller Prize, the Robert H. Durr Award, and the Emerging Scholar Award from the Society of Political Methodology. He is an [Andrew Carnegie Fellow](https://www.carnegie.org/awards/honoree/jens-hainmueller/), an elected [Fellow of the Society of Political Methodology](https://polmeth.org/fellows), and holds an [honorary degree from the European University Institute (EUI)](https://www.eui.eu/news-hub?id=jens-hainmuller-receives-eui-honoris-causa-degree).
 
 He completed his PhD at Harvard University, with additional studies at the London School of Economics, Brown University, and the University of Tuebingen. Before joining Stanford, he was a faculty member at the Massachusetts Institute of Technology (MIT).
 
