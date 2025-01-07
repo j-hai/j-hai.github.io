@@ -46,6 +46,6 @@ scholar_userid: S-8-QyIAAAAJ # your Google Scholar ID
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
 custom_social: # can be any name here other than the ones already defined above
-  logo: ipllogo.png # can be png, svg, jpg
+  logo: https://www.immigrationlab.org/content/uploads/2017/06/logo-white.png # can be png, svg, jpg
   title: IPL
   url: https://immigrationlab.org/
