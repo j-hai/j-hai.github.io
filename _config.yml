@@ -219,8 +219,8 @@ scholar:
   group_by: type, year
  # group_order: descending
 
-# sort_by: year
-# order: ascending
+ sort_by: year
+ order: ascending
 type_order: [article, inbook, book, unpublished, misc, report, conference, incollections, inproceedings, proceedings]
 type_names: {unpublished: working papers, report: reports, article: journal articles, inproceedings: conference articles & others}
 
