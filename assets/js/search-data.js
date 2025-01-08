@@ -72,7 +72,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
-          description: "",
+          description: "synth package",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-immigration-policy-lab-ipl",
