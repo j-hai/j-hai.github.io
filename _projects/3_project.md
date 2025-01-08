@@ -5,7 +5,7 @@ description:
 img: assets/img/IPL.jpeg
 redirect: https://immigrationlab.org/
 importance: 3
-category: work
+category: research
 ---
 
 Every project has a beautiful feature showcase page.
