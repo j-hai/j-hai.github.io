@@ -2,12 +2,12 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Coming soon
+description: 
 nav: true
 nav_order: 6
 ---
 
-In collaboration with my methodology colleagues in the Political Science Department, I developed the graduate and undergraduate methods sequences at Stanford, emphasizing rigorous training in quantitative and empirical research tools. Before joining Stanford, I designed a similar sequence at MIT.
+In collaboration with my methodology colleagues in the department, I developed the graduate and undergraduate methods sequences at Stanford, emphasizing rigorous training in quantitative and empirical research tools. Before joining Stanford, I designed a similar sequence at MIT.
 
 ---
 

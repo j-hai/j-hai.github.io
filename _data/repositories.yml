@@ -3,7 +3,9 @@ github_users:
  
 repo_description_lines_max: 2
 
-#github_repos:
+github_repos:
+ - xuyiqing/interflex
+
 #  - alshedivat/al-folio
 #  - jekyll/jekyll
 #  - twbs/bootstrap
