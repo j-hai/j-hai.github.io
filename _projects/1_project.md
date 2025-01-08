@@ -2,7 +2,7 @@
 layout: page
 title: Interaction Effects (interflex package)
 description: Interflex is a statistical software package, available as both an R library and a Stata routine, designed to estimate interaction effects with built-in diagnostics and visualization tools.
-img: assets/img/12.jpg
+img: assets/img/interflex.jpeg
 importance: 1
 category: software
 related_publications: true
