@@ -65,9 +65,9 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "projects-interaction-effects-interflex-package",
-          title: 'Interaction Effects (interflex package)',
-          description: "Interflex is a statistical software package, available as both an R library and a Stata routine, designed to estimate interaction effects with built-in diagnostics and visualization tools.",
+            },{id: "projects-interaction-effects",
+          title: 'Interaction Effects',
+          description: "interflex package",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-immigration-policy-lab-ipl",
