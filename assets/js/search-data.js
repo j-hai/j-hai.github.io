@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "Coming soon.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -65,9 +65,9 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },{id: "projects-interaction-effects-interflex-package",
+          title: 'Interaction Effects (interflex package)',
+          description: "Interflex is a statistical software package, available as both an R library and a Stata routine, designed to estimate interaction effects with built-in diagnostics and visualization tools.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
