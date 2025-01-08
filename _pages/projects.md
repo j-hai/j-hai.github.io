@@ -5,7 +5,7 @@ permalink: /projects/
 description: Selected research projects, including software packages.
 nav: true
 nav_order: 3
-display_categories: [work, fun, software]
+display_categories: [research, software]
 horizontal: false
 ---
 
