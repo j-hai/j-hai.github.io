@@ -218,7 +218,7 @@ scholar:
   query: "@*"
   #group_by: type, year
   group_by: type
- # group_order: descending
+  group_order: descending
 
   sort_by: year
   order: descending
