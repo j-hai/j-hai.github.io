@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Publications in reversed chronological order by categories: Journal Articles, Working Papers, and Book Chapters.
+description: Publications in reversed chronological order by categories - Journal Articles, Working Papers, and Book Chapters.
 nav: true
 nav_order: 2
 ---
