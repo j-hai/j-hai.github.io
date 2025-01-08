@@ -10,7 +10,7 @@ related_publications: true
 
 Interflex is a statistical software package, available as both an R library and a Stata routine, designed to estimate interaction effects with built-in diagnostics and visualization tools.
 
-The software is based on the following paper: {% cite hainmueller2019trust %}, and it won the Best Statistical Software Award from the Society of Political Methodology in 2023.
+The software is based on the methods developed in {% cite hainmueller2019trust %}, and it won the Best Statistical Software Award from the Society of Political Methodology in 2023.
 
 
 

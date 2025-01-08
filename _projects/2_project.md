@@ -8,7 +8,7 @@ category: software
 related_publications: true
 ---
 
-The synthetic control method enables researchers to estimate causal effects by constructing a synthetic version of a treatment unit through a weighted combination of control units. It is implemented as both an R package and a Stata routine, based on the following papers: {% cite abadie2010synthetic %}, {% cite abadie2015comparative %}, and {% cite abadie2011synth %}. This work was awarded the Gosnell Prize for Excellence in Political Methodology.
+The synthetic control method enables researchers to estimate causal effects by constructing a synthetic version of a treatment unit through a weighted combination of control units. It is implemented as both an R package and a Stata routine, based on the methods developed in the following papers {% cite abadie2010synthetic %}, {% cite abadie2015comparative %}, and {% cite abadie2011synth %}. This work was awarded the Gosnell Prize for Excellence in Political Methodology.
 
 
 ---
