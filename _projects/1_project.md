@@ -1,25 +1,19 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: Interaction Effects (interflex package)
+description: Interflex is a statistical software package, available as both an R library and a Stata routine, designed to estimate interaction effects with built-in diagnostics and visualization tools.
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: software
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Interflex is a statistical software package, available as both an R library and a Stata routine, designed to estimate interaction effects with built-in diagnostics and visualization tools. The software is based on the following paper: {% cite hainmueller2019trust %}, and it won the Best Statistical Software Award from the Society of Political Methodology in 2023.
+---
+[Interflex for R](https://yiqingxu.org/packages/interflex/)
+[Interflex for Stata](https://yiqingxu.org/packages/interflex/StataGuide.pdf)
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
