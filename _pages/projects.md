@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Coming soon.
+description: Selected research projects, including software packages.
 nav: true
 nav_order: 3
 display_categories: [work, fun, software]
