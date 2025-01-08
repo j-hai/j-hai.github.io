@@ -36,7 +36,7 @@ This capstone course in the quantitative methodology sequence covers advanced em
 ---
 
 ### POLISCI 150C/355C: Causal Inference for Social Science
-An undergraduate and graduate-level introduction to modern causal inference methods. This course covers experimental designs, matching, regression, instrumental variables, and regression discontinuity methods with applications across public policy, sociology, and economics.  
+An undergraduate level introduction to modern causal inference methods. This course covers experimental designs, matching, regression, instrumental variables, and regression discontinuity methods with applications across public policy, sociology, and economics.  
 [Syllabus (PDF)](assets/pdf/PS150c_2024.pdf)  
 
 ---
