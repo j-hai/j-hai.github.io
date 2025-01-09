@@ -90,6 +90,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
+            },},{id: "projects-citizenship",
+          title: 'Citizenship',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_project/";
             },},{
         id: 'social-email',
         title: 'email',
