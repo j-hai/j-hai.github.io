@@ -4,7 +4,7 @@ title: Interaction Effects
 description: interflex package
 img: assets/img/interflex.jpeg
 importance: 1
-category: software
+category: methods
 related_publications: true
 ---
 

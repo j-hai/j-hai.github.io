@@ -4,7 +4,7 @@ title: Synthetic Control Methods
 description: synth package
 img: assets/img/synthpic.jpeg
 importance: 1
-category: software
+category: methods
 related_publications: true
 ---
 

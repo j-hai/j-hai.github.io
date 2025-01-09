@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Selected research projects, including software packages.
+description: Selected research projects, including methods with software packages and applications.
 nav: true
 nav_order: 3
-display_categories: [research, software]
+display_categories: [lab,applications, methods]
 horizontal: false
 ---
 
