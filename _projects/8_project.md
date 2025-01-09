@@ -35,7 +35,7 @@ The IPL-12 is a flexible, user-friendly tool that has become a resource for rese
 - **User-Friendly Design:** Administered through concise questionnaires available in multiple formats.
 - **Reliability and Validity:** Balances short survey length with reliability.
 
-### Validation and Widespread Adoption
+### Validation and Adoption
 
 The IPL-12 has been validated through surveys conducted in diverse countries and among varied immigrant populations. Its utility is reflected in its adoption by prominent organizations such as:
 
