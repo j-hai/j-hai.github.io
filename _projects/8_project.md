@@ -11,7 +11,7 @@ related_publications: true
 
 ## Measuring Integration
 
-We developed the **IPL-12 Integration Index**, a practical and multidimensional tool for measuring immigrant integration. For years, the absence of a standardized measure has hindered integration research, making it challenging to compare findings across studies, countries, and time. The IPL-12 addresses this gap by providing a reliable, versatile framework to evaluate six key dimensions of integration:
+We developed the **IPL-12 Integration Index**, a practical and multidimensional tool for measuring immigrant integration. The absence of a standardized measure has hindered integration research, making it challenging to compare findings across studies, countries, and time. The IPL-12 addresses this gap by providing a reliable, versatile framework to evaluate six key dimensions of integration:
 
 - **Psychological**
 - **Economic**
@@ -24,16 +24,16 @@ We developed the **IPL-12 Integration Index**, a practical and multidimensional 
 
 The IPL-12 was first introduced in {% cite harder2018multidimensional %}. Explore the survey documents or participate in the survey using the links below:
 
-- [Access the Survey Documents](#)
-- [Take the IPL-12 Survey](#)
+- [Access the Survey Documents](https://immigrationlab.org/ipl-integration-index/)
+- [Take the IPL-12 Survey](https://immigrationlab.org/ipl-integration-index/)
 
 ### Why Use the IPL-12?
 
-The IPL-12 is a flexible, user-friendly tool that has become an invaluable resource for researchers, policymakers, and organizations worldwide. Key benefits include:
+The IPL-12 is a flexible, user-friendly tool that has become a resource for researchers, policymakers, and organizations to measure migrants' integration outcomes. Benefits include:
 
 - **Global Applicability:** Designed to be used across countries, immigrant groups, and time periods.
 - **User-Friendly Design:** Administered through concise questionnaires available in multiple formats.
-- **Reliability and Validity:** Balances short survey length with robust reliability and accuracy.
+- **Reliability and Validity:** Balances short survey length with reliability.
 
 ### Validation and Widespread Adoption
 
