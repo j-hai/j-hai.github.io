@@ -90,11 +90,16 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-citizenship",
-          title: 'Citizenship',
+            },},{id: "projects-immigration-attitudes",
+          title: 'Immigration Attitudes',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
+            },},{id: "projects-measuring-integration",
+          title: 'Measuring Integration',
+          description: "IPL-12 Integration Index",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_project/";
             },},{
         id: 'social-email',
         title: 'email',
