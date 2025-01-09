@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Citizenship
+title: Immigration Attitudes
 description: 
 img: assets/img/attitutdes.jpeg
 importance: 1
