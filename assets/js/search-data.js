@@ -100,6 +100,11 @@ ninja.data = [{
           description: "IPL-12 Integration Index",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
+            },},{id: "projects-null-results",
+          title: 'Null Results',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-email',
         title: 'email',
