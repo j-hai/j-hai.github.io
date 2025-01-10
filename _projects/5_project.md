@@ -31,7 +31,7 @@ In {% cite bansak2023using %}, we demonstrate how AMCEs can be applied to analyz
 
 ### Conjoint Design
 
-Our research also examines various aspects of conjoint design. We have developed the **Conjoint Survey Design Tool** to enable researchers to implement conjoint surveys in Qualtrics.
+Our research also examines various aspects of conjoint design. We have also developed the **Conjoint Survey Design Tool** to enable researchers to implement conjoint surveys in Qualtrics.
 
 [Conjoint Survey Design Tool](https://github.com/astrezhnev/conjointsdt)
 
