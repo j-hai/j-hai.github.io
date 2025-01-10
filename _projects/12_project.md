@@ -16,7 +16,7 @@ In {% cite hainmueller2017protecting %}, we provided causal evidence on the impa
 
 ### Expanding Prenatal Care
 
-In {% cite swartz2017expanding %} and {% cite swartz2019oregon %}, we analyzed the impacts of Oregon?s expansion of prenatal care access for undocumented women. This program was rolled out gradually across counties, allowing for a quasi-experimental analysis of its effects. Key findings include that access to prenatal care led to significant enhancements in health outcomes for both women and their children.
+In {% cite swartz2017expanding %} and {% cite swartz2019oregon %}, we analyzed the impacts of Oregon's expansion of prenatal care access for undocumented women. This program was rolled out gradually across counties, allowing for a quasi-experimental analysis of its effects. Key findings include that access to prenatal care led to significant enhancements in health outcomes for both women and their children.
 
 ### Immigration Enforcement and Health Care Utilization
 
@@ -24,7 +24,7 @@ In {% cite yasenov2020healthcare %}, we examined the association between healthc
 
 ### Public Health Insurance for Immigrant Children
 
-In {% cite yasenov2020public %}, we explored the effects of public health insurance expansion for immigrant children on interstate migration of low-income immigrant families. Our findings showed that the expansion significantly did not prompt significant migration across state lines.
+In {% cite yasenov2020public %}, we explored the effects of public health insurance expansion for immigrant children on interstate migration of low-income immigrant families. Our findings showed that the expansion did not lead to significant migration across state lines, inconsistent with the theory of a magnet effect.
 
 ### Neighborhood Disadvantage and Refugee Health
 
