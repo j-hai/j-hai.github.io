@@ -4,8 +4,10 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
- - xuyiqing/interflex
+- xuyiqing/interflex
 - astrezhnev/conjointsdt
+- lukesonnet/KRLS
+
 #  - alshedivat/al-folio
 #  - jekyll/jekyll
 #  - twbs/bootstrap
