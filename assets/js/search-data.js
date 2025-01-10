@@ -75,6 +75,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/11_project/";
+            },},{id: "projects-health-disparities",
+          title: 'Health Disparities',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/12_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
