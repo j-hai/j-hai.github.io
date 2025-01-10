@@ -5,7 +5,7 @@ description:
 img: assets/img/whatsapp.jpeg
 redirect: https://immigrationlab.org/project/whatsappsurveys/
 importance: 1
-category: applications
+category: methods
 related_publications: true
 ---
 
