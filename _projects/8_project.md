@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Measuring Integration
-description: IPL-12 Integration Index 
+description:  
 img: assets/img/measureintegration.jpeg
 importance: 1
 category: applications
