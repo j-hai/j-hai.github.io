@@ -80,6 +80,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/12_project/";
+            },},{id: "projects-whatsapp-surveys",
+          title: 'WhatsApp Surveys',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/13_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
