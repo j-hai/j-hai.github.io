@@ -12,7 +12,7 @@ We have conducted various studies using healthcare records to examine health dis
 
 ### The Health Impact of DACA on U.S. Citizen Children
 
-In {% cite hainmueller2017protecting %}, we provided causal evidence on the impact of the Deferred Action for Childhood Arrivals (DACA) program on the health of U.S. citizen children in mixed-status families. Utilizing Medicaid claims data from Oregon and the quasi-random assignment of DACA eligibility based on mothers? birthdates near the program?s age cutoff, we demonstrated that mothers? DACA eligibility significantly decreased diagnoses of adjustment and anxiety disorders in their children. This research underscores the broad societal impacts of immigration policies beyond the direct recipients.
+In {% cite hainmueller2017protecting %}, we provided causal evidence on the impact of the Deferred Action for Childhood Arrivals (DACA) program on the health of U.S. citizen children in mixed-status families. Utilizing Medicaid claims data from Oregon and the quasi-random assignment of DACA eligibility based on mothers' birthdates near the program's age cutoff, we demonstrated that mothers? DACA eligibility significantly decreased diagnoses of adjustment and anxiety disorders in their children. This research underscores the broad societal impacts of immigration policies beyond the direct recipients.
 
 ### Expanding Prenatal Care
 
