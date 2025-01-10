@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Interaction Effects
-description: interflex package
+description: 
 img: assets/img/interflex.jpeg
 importance: 1
 category: methods

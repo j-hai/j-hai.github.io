@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Synthetic Control Methods
-description: synth package
+description: 
 img: assets/img/synthpic.jpeg
 importance: 1
 category: methods

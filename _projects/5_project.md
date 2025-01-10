@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Conjoint Experiments
-description: estimator and design
+description: 
 img: assets/img/conjoint.jpeg
 importance: 1
 category: methods

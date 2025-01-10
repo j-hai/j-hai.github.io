@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Entropy Balancing
-description: ebal package
+description: 
 img: assets/img/entropy.jpeg
 importance: 1
 category: methods
