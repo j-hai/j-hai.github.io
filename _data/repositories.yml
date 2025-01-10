@@ -5,7 +5,7 @@ repo_description_lines_max: 2
 
 github_repos:
  - xuyiqing/interflex
-
+- astrezhnev/conjointsdt
 #  - alshedivat/al-folio
 #  - jekyll/jekyll
 #  - twbs/bootstrap
