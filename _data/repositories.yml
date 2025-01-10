@@ -6,7 +6,11 @@ repo_description_lines_max: 2
 github_repos:
 - xuyiqing/interflex
 - astrezhnev/conjointsdt
+- apoorvalal/EBAL-in-CVXR
+- apoorvalal/synthlearners
 - lukesonnet/KRLS
+
+
 
 #  - alshedivat/al-folio
 #  - jekyll/jekyll
