@@ -65,7 +65,12 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "projects-interaction-effects",
+            },{id: "projects-kernel-ml-methods",
+          title: 'Kernel ML Methods',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
+            },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "interflex package",
           section: "Projects",handler: () => {
@@ -85,6 +90,11 @@ ninja.data = [{
           description: "ebal package",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
+            },},{id: "projects-conjoint-experiments",
+          title: 'Conjoint Experiments',
+          description: "estimator and design",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
             },},{id: "projects-citizenship",
           title: 'Citizenship',
           description: "",
@@ -97,7 +107,7 @@ ninja.data = [{
               window.location.href = "/projects/7_project/";
             },},{id: "projects-measuring-integration",
           title: 'Measuring Integration',
-          description: "IPL-12 Integration Index",
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
             },},{id: "projects-null-results",
