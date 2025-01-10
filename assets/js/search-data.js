@@ -70,6 +70,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/10_project/";
+            },},{id: "projects-linking-health-records",
+          title: 'Linking Health Records',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/11_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
