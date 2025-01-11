@@ -44,6 +44,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-people",
+          title: "people",
+          description: "Members of the Research Group and Alumni",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/people/";
+          },
         },{id: "dropdown-publications",
               title: "publications",
               description: "",
