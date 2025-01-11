@@ -110,6 +110,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/18_project/";
+            },},{id: "projects-financial-bailouts",
+          title: 'Financial Bailouts',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/19_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
