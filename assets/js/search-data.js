@@ -90,6 +90,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/14_project/";
+            },},{id: "projects-ethnic-networks",
+          title: 'Ethnic Networks',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/15_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
