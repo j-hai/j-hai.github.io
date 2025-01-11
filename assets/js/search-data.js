@@ -105,6 +105,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/17_project/";
+            },},{id: "projects-asylum-wait-times",
+          title: 'Asylum Wait Times',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/18_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
