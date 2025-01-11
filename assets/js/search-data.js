@@ -120,6 +120,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
+            },},{id: "projects-geomatch",
+          title: 'GeoMatch',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/20_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
