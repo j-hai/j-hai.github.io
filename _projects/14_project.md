@@ -5,6 +5,7 @@ description:
 img: assets/img/secondary.jpeg
 importance: 1
 category: applications
+redirect: https://immigrationlab.org/project/why-do-refugees-move-after-arrival-opportunity-and-community/
 related_publications: true
 ---
 
