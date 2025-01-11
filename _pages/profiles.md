@@ -5,188 +5,47 @@ title: people
 description: Members of the Research Group and Alumni 
 nav: true
 nav_order: 7
-
-profiles:
-
-profiles:
-  - name: Linna Martén
-    role: Postdoctoral Researcher
-    affiliation: Uppsala University
-    year_completed: 2018
-
-  - name: Niklas Harder
-    role: Postdoctoral Researcher
-    affiliation: Deutsches Zentrum für Integrations- und Migrationsforschung
-    year_completed: 2019
-
-  - name: Daniel Masterson
-    role: Postdoctoral Researcher
-    affiliation: University of California Santa Barbara
-    year_completed: 2020
-
-  - name: Alexandra Siegel
-    role: Postdoctoral Researcher
-    affiliation: University of Colorado Boulder
-    year_completed: 2020
-
-  - name: Vasil (Vasco) Yasenov
-    role: Postdoctoral Researcher
-    affiliation: Adobe
-    year_completed: 2020
-
-  - name: Nicholas Adams-Cohen
-    role: Postdoctoral Researcher
-    affiliation: Deloitte
-    year_completed: 2021
-
-  - name: Elisabeth Paulson
-    role: Postdoctoral Researcher
-    affiliation: Harvard Business School
-    year_completed: 2022
-
-  - name: Lilla Orr
-    role: Postdoctoral Researcher
-    affiliation: University of Richmond, Department of Mathematics and Computer Science
-    year_completed: 2022
-
-  - name: Cesar Vargas Nunez
-    role: Postdoctoral Researcher
-    affiliation: University of California Los Angeles
-    year_completed: 2024
-
-  - name: Anand Kalvit
-    role: Postdoctoral Researcher
-    affiliation: Ongoing
-    year_completed: -
-
-  - name: Yiqing Xu
-    role: Ph.D. Student (Main Advisor)
-    affiliation: Stanford University
-    year_completed: 2015
-
-  - name: Chad Hazlett
-    role: Ph.D. Student (Main Advisor)
-    affiliation: University of California Los Angeles
-    year_completed: 2013
-
-  - name: Mathilde Emeriau
-    role: Ph.D. Student (Main Advisor)
-    affiliation: London School of Economics
-    year_completed: 2019
-
-  - name: Kirk Bansak
-    role: Ph.D. Student (Main Advisor)
-    affiliation: University of California Berkeley
-    year_completed: 2019
-
-  - name: Apoorva Lal
-    role: Ph.D. Student (Main Advisor)
-    affiliation: Netflix
-    year_completed: 2023
-
-  - name: Greg Distelhorst
-    role: Ph.D. Student (Committee Member)
-    affiliation: Oxford University Said Business School
-    year_completed: 2013
-
-  - name: Michael Sances
-    role: Ph.D. Student (Committee Member)
-    affiliation: University of Memphis
-    year_completed: 2013
-
-  - name: Jeremy Ferwerda
-    role: Ph.D. Student (Committee Member)
-    affiliation: Dartmouth College
-    year_completed: 2015
-
-  - name: Francisco Garfias
-    role: Ph.D. Student (Committee Member)
-    affiliation: University of California San Diego
-    year_completed: 2016
-
-  - name: Lucas Puente
-    role: Ph.D. Student (Committee Member)
-    affiliation: Thumbtack, Inc
-    year_completed: 2015
-
-  - name: Tannis Thorlakson
-    role: Ph.D. Student (Committee Member)
-    affiliation: Driscoll’s Inc.
-    year_completed: 2018
-
-  - name: Jonathan Mummolo
-    role: Ph.D. Student (Committee Member)
-    affiliation: Princeton University
-    year_completed: 2019
-
-  - name: Dan Thompson
-    role: Ph.D. Student (Committee Member)
-    affiliation: University of California Los Angeles
-    year_completed: 2020
-
-  - name: Salma Moussa
-    role: Ph.D. Student (Committee Member)
-    affiliation: Yale University
-    year_completed: 2020
-
-  - name: David Hausman
-    role: Ph.D. Student (Committee Member)
-    affiliation: University of California Berkeley
-    year_completed: 2020
-
-  - name: Nathan Lee
-    role: Ph.D. Student (Committee Member)
-    affiliation: Rochester Institute of Technology
-    year_completed: 2020
-
-  - name: Hans Lueders
-    role: Ph.D. Student (Committee Member)
-    affiliation: Postdoc at Princeton University
-    year_completed: 2020
-
-  - name: Jesse Yoder
-    role: Ph.D. Student (Committee Member)
-    affiliation: Facebook
-    year_completed: 2021
-
-  - name: Matthew Tyler
-    role: Ph.D. Student (Committee Member)
-    affiliation: Postdoc Stanford
-    year_completed: 2021
-
-  - name: Tobias Nowacki
-    role: Ph.D. Student (Committee Member)
-    affiliation: Deliveroo
-    year_completed: 2022
-
-  - name: Mae McDonald
-    role: Ph.D. Student (Committee Member)
-    affiliation: Ongoing
-    year_completed: -
-
-  - name: Shirin Kashani
-    role: Ph.D. Student (Committee Member)
-    affiliation: Ongoing
-    year_completed: -
 ---
 
+#### Research Team At IPL
 
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
-  - align: right
-   # image: prof_pic.jpg
-    content: about_einstein.md
-   # image_circular: false # crops the image to make it circular
-  #  more_info: >
-  #    <p>555 your office number</p>
-  #    <p>123 your address street</p>
-  #    <p>Your City, State 12345</p>
-  #- align: left
-  #  image: prof_pic.jpg
-  #  content: about_einstein.md
-  # image_circular: false # crops the image to make it circular
-  #  more_info: >
-  #    <p>555 your office number</p>
-  #    <p>123 your address street</p>
-  #    <p>Your City, State 12345</p>
----
+- [IPL Team](https://immigrationlab.org/team/)
+
+#### Postdoctoral Researchers
+- [Linna Martén](https://sites.google.com/site/linnamarten/home) (Uppsala University)
+- [Niklas Harder](https://www.dezim-institut.de/en/employees/person-detail/niklas-harder/) (Deutsches Zentrum für Integrations- und Migrationsforschung)
+- [Daniel Masterson](https://www.danielmasterson.com/) (University of California Santa Barbara)
+- [Alexandra Siegel](https://www.alexandra-siegel.com/) (University of Colorado Boulder)
+- [Vasil (Vasco) Yasenov](https://www.linkedin.com/in/vasil-yasenov-2a6a3a39/) (Adobe)
+- [Nicholas Adams-Cohen](https://www.linkedin.com/in/nicholas-adams-cohen-0b3a3a39/) (Deloitte)
+- [Elisabeth Paulson](https://www.hbs.edu/faculty/Pages/profile.aspx?facId=123456) (Harvard Business School)
+- [Lilla Orr](https://lillaorr.com/) (University of Richmond)
+- [Cesar Vargas Nunez](https://www.linkedin.com/in/cesar-vargas-nunez-12345678/) (University of California Los Angeles)
+- [Anand Kalvit](https://sites.google.com/view/anandkalvit/bio) (ongoing)
+
+#### Ph.D. Students (Main Dissertation Advisor)
+- [Yiqing Xu](https://yiqingxu.org/) (Stanford University)
+- [Chad Hazlett](https://www.chadhazlett.com/) (University of California Los Angeles)
+- [Mathilde Emeriau](https://www.mathildeemeriau.com/) (London School of Economics)
+- [Kirk Bansak](https://www.kirkbansak.com/) (University of California Berkeley)
+- [Apoorva Lal](https://www.linkedin.com/in/apoorva-lal-12345678/) (Netflix)
+
+#### Ph.D. Students (Dissertation Committee Member)
+- [Greg Distelhorst](https://www.gregdistelhorst.com/) (Oxford University Said Business School)
+- [Michael Sances](https://www.michaelsances.com/) (University of Memphis)
+- [Jeremy Ferwerda](https://www.jeremyferwerda.com/) (Dartmouth College)
+- [Francisco Garfias](https://www.franciscogarfias.com/) (University of California San Diego)
+- [Lucas Puente](https://www.linkedin.com/in/lucas-puente-12345678/) (Thumbtack, Inc)
+- [Tannis Thorlakson](https://www.linkedin.com/in/tannis-thorlakson-12345678/) (Driscoll’s Inc.)
+- [Jonathan Mummolo](https://www.jonathanmummolo.com/) (Princeton University)
+- [Dan Thompson](https://www.danielthompson.com/) (University of California Los Angeles)
+- [Salma Moussa](https://www.salmamoussa.com/) (Yale University)
+- [David Hausman](https://www.davidhausman.com/) (University of California Berkeley)
+- [Nathan Lee](https://www.nathanlee.com/) (Rochester Institute of Technology)
+- [Hans Lueders](https://www.hanslueders.com/) (Hoover)
+- [Jesse Yoder](https://www.jesseyoder.com/) (Meta)
+- [Matthew Tyler](https://www.matthewtyler.site/) (Rice University)
+- [Tobias Nowacki](https://www.tobiasnowacki.com/) (Deliveroo)
+- [Mae McDonald](https://www.maemacdonald.com/) (ongoing)
+- [Shirin Kashani](https://immigrationlab.org/our-team/shirin-abrashami-kashani/) (ongoing)
+- [Douglas Leonard](https://politicalscience.stanford.edu/people/douglas-leonard) (ongoing)
