@@ -95,6 +95,16 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/15_project/";
+            },},{id: "projects-language-training",
+          title: 'Language Training',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/16_project/";
+            },},{id: "projects-employment-bans",
+          title: 'Employment Bans',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/17_project/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
