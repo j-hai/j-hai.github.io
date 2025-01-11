@@ -24,13 +24,13 @@ nav_order: 7
 - [Anand Kalvit](https://sites.google.com/view/anandkalvit/bio) (ongoing)
 
 #### Ph.D. Students (Main Dissertation Advisor)
-- [Yiqing Xu](https://yiqingxu.org/) (Stanford University)
 - [Chad Hazlett](https://www.chadhazlett.com/) (University of California Los Angeles)
-- [Mathilde Emeriau](https://www.mathildeemeriau.com/) (London School of Economics)
+- [Yiqing Xu](https://yiqingxu.org/) (Stanford University)
+- [Mathilde Emeriau](https://mathildeemeriau.com/) (London School of Economics)
 - [Kirk Bansak](https://www.kirkbansak.com/) (University of California Berkeley)
-- [Apoorva Lal](https://www.linkedin.com/in/apoorva-lal-12345678/) (Netflix)
+- [Apoorva Lal](https://apoorvalal.github.io/) (Netflix)
 
-#### Ph.D. Students (Dissertation Committee Member)
+#### Ph.D. Students (Dissertation Advisor)
 - [Greg Distelhorst](https://www.gregdistelhorst.com/) (Oxford University Said Business School)
 - [Michael Sances](https://www.michaelsances.com/) (University of Memphis)
 - [Jeremy Ferwerda](https://www.jeremyferwerda.com/) (Dartmouth College)
