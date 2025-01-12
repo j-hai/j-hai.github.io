@@ -125,6 +125,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/20_project/";
+            },},{id: "projects-refugee-housing",
+          title: 'Refugee Housing',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/21_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
