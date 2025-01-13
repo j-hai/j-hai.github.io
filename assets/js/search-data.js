@@ -195,6 +195,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/33_project_frameing/";
+            },},{id: "projects-legal-services-providers",
+          title: 'Legal Services Providers',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/35_project_ispnetwork/";
             },},{id: "projects-immigration-policy-lab-ipl",
           title: 'Immigration Policy Lab (IPL)',
           description: "",
