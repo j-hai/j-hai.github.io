@@ -69,52 +69,52 @@ ninja.data = [{
           title: 'Kernel ML Methods',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/10_project/";
+              window.location.href = "/projects/10_project_krls/";
             },},{id: "projects-linking-health-records",
           title: 'Linking Health Records',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/11_project/";
+              window.location.href = "/projects/11_project_Linking_Health_Records/";
             },},{id: "projects-health-disparities",
           title: 'Health Disparities',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/12_project/";
+              window.location.href = "/projects/12_project_Health_Disparities/";
             },},{id: "projects-whatsapp-surveys",
           title: 'WhatsApp Surveys',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/13_project/";
+              window.location.href = "/projects/13_project_WhatsApp/";
             },},{id: "projects-secondary-migration",
           title: 'Secondary Migration',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/14_project/";
+              window.location.href = "/projects/14_project_Secondary_Migration/";
             },},{id: "projects-ethnic-networks",
           title: 'Ethnic Networks',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/15_project/";
+              window.location.href = "/projects/15_project_Ethnic_Networks/";
             },},{id: "projects-language-training",
           title: 'Language Training',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/16_project/";
+              window.location.href = "/projects/16_project_Language_Training/";
             },},{id: "projects-employment-bans",
           title: 'Employment Bans',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/17_project/";
+              window.location.href = "/projects/17_project_Employment_Bans/";
             },},{id: "projects-asylum-wait-times",
           title: 'Asylum Wait Times',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/18_project/";
+              window.location.href = "/projects/18_project_Asylum_Wait_Times/";
             },},{id: "projects-financial-bailouts",
           title: 'Financial Bailouts',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/19_project/";
+              window.location.href = "/projects/19_project_Financial_Bailouts/";
             },},{id: "projects-interaction-effects",
           title: 'Interaction Effects',
           description: "",
@@ -124,57 +124,52 @@ ninja.data = [{
           title: 'GeoMatch',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/20_project/";
+              window.location.href = "/projects/20_project_GeoMatch/";
             },},{id: "projects-refugee-housing",
           title: 'Refugee Housing',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/21_project/";
+              window.location.href = "/projects/21_project_Refugee_Housing/";
             },},{id: "projects-integration-contracts",
           title: 'Integration Contracts',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/22_project/";
+              window.location.href = "/projects/22_project_Integration_Contracts/";
             },},{id: "projects-ethical-supply-chains",
           title: 'Ethical Supply Chains',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/23_project/";
+              window.location.href = "/projects/23_project_Ethical_Supply_Chains/";
             },},{id: "projects-active-labor-market-policies",
           title: 'Active Labor Market Policies',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/24_project/";
+              window.location.href = "/projects/24_project_caseloads/";
             },},{id: "projects-regression-discontinuity",
           title: 'Regression Discontinuity',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/25_project/";
+              window.location.href = "/projects/25_project_rdd/";
             },},{id: "projects-incumbency-advantage",
           title: 'Incumbency Advantage',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/26_project/";
+              window.location.href = "/projects/26_project_Incumbency/";
             },},{id: "projects-fair-trade",
           title: 'Fair Trade',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/27_project/";
+              window.location.href = "/projects/27_project_Fair_Trade/";
             },},{id: "projects-congressional-stock-trading",
           title: 'Congressional Stock Trading',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/28_project/";
-            },},{id: "projects-congressional-stock-trading",
-          title: 'Congressional Stock Trading',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/29_project/";
+              window.location.href = "/projects/28_project_CongressionalStockTrading/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/2_project_scm/";
             },},{id: "projects-electoral-balancing",
           title: 'Electoral Balancing',
           description: "",
@@ -204,37 +199,37 @@ ninja.data = [{
           title: 'Immigration Policy Lab (IPL)',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
+              window.location.href = "/projects/3_project_ipl/";
             },},{id: "projects-entropy-balancing",
           title: 'Entropy Balancing',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
+              window.location.href = "/projects/4_project_ebal/";
             },},{id: "projects-conjoint-experiments",
           title: 'Conjoint Experiments',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
+              window.location.href = "/projects/5_project_Conjoint_Experiments/";
             },},{id: "projects-citizenship",
           title: 'Citizenship',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
+              window.location.href = "/projects/6_project_Citizenship/";
             },},{id: "projects-immigration-attitudes",
           title: 'Immigration Attitudes',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
+              window.location.href = "/projects/7_project_Immigration_Attitudes/";
             },},{id: "projects-measuring-integration",
           title: 'Measuring Integration',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
+              window.location.href = "/projects/8_project_Measuring_Integration/";
             },},{id: "projects-null-results",
           title: 'Null Results',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/9_project_Null_Results/";
             },},{
         id: 'social-email',
         title: 'email',
