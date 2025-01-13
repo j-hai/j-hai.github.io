@@ -135,6 +135,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/22_project/";
+            },},{id: "projects-ethical-supply-chains",
+          title: 'Ethical Supply Chains',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/23_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
