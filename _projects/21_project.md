@@ -4,7 +4,6 @@ title: Refugee Housing
 description: 
 img: assets/img/privatehost.jpeg
 importance: 1
-redirect: https://immigrationlab.org/geomatch/
 category: applications
 related_publications: true
 ---
