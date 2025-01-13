@@ -130,6 +130,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/21_project/";
+            },},{id: "projects-integration-contracts",
+          title: 'Integration Contracts',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/22_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
