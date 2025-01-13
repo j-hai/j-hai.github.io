@@ -180,6 +180,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/30_project_midtermloss/";
+            },},{id: "projects-returns-to-political-office",
+          title: 'Returns to Political Office',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/31_project_mpsforsale/";
             },},{id: "projects-immigration-policy-lab-ipl",
           title: 'Immigration Policy Lab (IPL)',
           description: "",
