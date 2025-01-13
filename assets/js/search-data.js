@@ -119,7 +119,7 @@ ninja.data = [{
           title: 'Interaction Effects',
           description: "",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
+              window.location.href = "/projects/1_project_interflex/";
             },},{id: "projects-geomatch",
           title: 'GeoMatch',
           description: "",
