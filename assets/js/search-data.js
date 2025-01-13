@@ -165,6 +165,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/28_project/";
+            },},{id: "projects-congressional-stock-trading",
+          title: 'Congressional Stock Trading',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/29_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
