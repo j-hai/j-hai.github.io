@@ -15,27 +15,22 @@ We explore why native populations oppose or support immigration, testing various
 
 ### Attitudes Towards General Immigration
 
-Key studies in this area include:
-- {% cite hainmueller2006learning %}
-- {% cite hainmueller2007educated %}
+Key studies in this area include:  
+- {% cite hainmueller2006learning %}: This paper explores how education influences attitudes toward trade.  
+- {% cite hainmueller2007educated %}: This study examines how education shapes attitudes toward immigration.  
+- {% cite hainmueller2010attitudes %}: This research investigates how attitudes toward immigration vary based on the skill level of migrants, testing economic theories of attitude formation.  
+- {% cite hainmueller2015concerns %}: This study analyzes whether attitudes toward immigration are driven by concerns about labor market competition.  
+- {% cite hainmueller2015hidden %}: This research examines how attitudes toward immigration vary based on migrants' attributes, testing general theories of attitude formation and exploring consensus on immigration attitudes across voter subgroups.
 
 
-- {% cite hainmueller2010attitudes %}
-- {% cite hainmueller2013voter %}
-- {% cite hainmueller2015concerns %}
-- {% cite hainmueller2015hidden %}
-- {% cite  %}
-- {% cite  %}
-- {% cite  %}
 
 ### Attitudes Towards Refugees and Asylum Seekers
 
 Key studies in this area include:
-- {% cite bansak2016economic %}
-- {% cite bansak2017europeans %}
-- {% cite bansak2023europeans %}
-- {% cite alrababah2021attitudes %}
-
+- {% cite bansak2016economic %}: This paper analyzes how economic, humanitarian, and religious concerns shape European attitudes toward asylum seekers.
+- {% cite bansak2017europeans %}: This study examines European preferences for asylum policies, emphasizing the impact of fairness of sharing mechanisms.
+- {% cite bansak2023europeans %}: This research explores long-term shifts in European attitudes toward asylum seekers within changing geopolitical contexts.
+- {% cite alrababah2021attitudes %}: This paper investigates attitudes toward refugees in Syria, focusing on the roles of identity and economic trade-offs.
 
 ### Review Artcile
 
@@ -44,7 +39,7 @@ In {% cite hainmueller2014public %} we provide a summary of research on public a
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/attitutdes.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/imigattitudes1.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
