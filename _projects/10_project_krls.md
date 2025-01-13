@@ -25,6 +25,5 @@ We argue that KRLS is particularly well-suited for social science applications b
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
-</div>
+ </div>
 

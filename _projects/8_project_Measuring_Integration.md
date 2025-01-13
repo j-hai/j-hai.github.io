@@ -4,7 +4,7 @@ title: Measuring Integration
 description:  
 img: assets/img/measureintegration.jpeg
 importance: 1
-category: applications
+category: methods
 related_publications: true
 ---
 
@@ -56,6 +56,5 @@ Discover how the IPL-12 Integration Index is advancing global research on immigr
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

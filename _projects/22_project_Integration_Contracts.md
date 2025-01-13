@@ -22,6 +22,5 @@ This study highlights the potential and limitations of integration contracts in 
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

@@ -20,6 +20,5 @@ We find that refugees resettled in areas with strong co-ethnic networks are sign
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

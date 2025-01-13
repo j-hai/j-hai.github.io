@@ -38,6 +38,5 @@ In {% cite kim2023neighborhood %}, we conducted a quasi-experimental study exami
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

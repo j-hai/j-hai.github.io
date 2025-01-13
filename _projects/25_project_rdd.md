@@ -24,6 +24,5 @@ In {% cite hainmueller2015assessing %}, the regression discontinuity (RD) design
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

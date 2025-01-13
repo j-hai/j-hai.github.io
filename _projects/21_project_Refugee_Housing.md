@@ -20,6 +20,5 @@ Our results reveal that private hosting significantly improves social, psycholog
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

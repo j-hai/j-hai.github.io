@@ -17,6 +17,5 @@ In {% cite mossaad2020migration %}, we leverage nationwide population-level micr
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

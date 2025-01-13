@@ -18,6 +18,5 @@ In {% cite orr2024linking %}, we utilize nationwide Medicaid claims data to deve
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

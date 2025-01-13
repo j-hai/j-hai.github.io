@@ -24,6 +24,5 @@ Both studies underscore the power and limits of private governance mechanisms to
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

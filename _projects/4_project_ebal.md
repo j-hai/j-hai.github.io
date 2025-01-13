@@ -30,6 +30,5 @@ The method is based on the approaches developed in {% cite hainmueller2012entrop
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

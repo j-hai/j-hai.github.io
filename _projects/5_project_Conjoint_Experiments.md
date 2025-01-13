@@ -48,6 +48,5 @@ Our research also examines various aspects of conjoint design. We have also deve
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

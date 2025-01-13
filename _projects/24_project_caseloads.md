@@ -23,6 +23,5 @@ These results highlight the potential of adjusting caseworker caseloads to impro
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

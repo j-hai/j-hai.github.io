@@ -20,6 +20,5 @@ In {% cite bansak2020leftright %}, we explore the ideological divide in European
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

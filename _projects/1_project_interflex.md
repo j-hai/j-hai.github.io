@@ -30,6 +30,5 @@ The software is based on the methods developed in {% cite hainmueller2019trust %
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

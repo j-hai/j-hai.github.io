@@ -34,6 +34,5 @@ Learn more about our work:
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

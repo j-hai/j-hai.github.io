@@ -48,6 +48,5 @@ In {% cite hainmueller2014public %} we provide a summary of research on public a
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 

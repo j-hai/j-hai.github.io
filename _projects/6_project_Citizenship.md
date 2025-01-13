@@ -43,6 +43,5 @@ We examined who attains citizenship and the potential for discrimination in citi
     </div>
 </div>
 <div class="caption">
-    Flexibly estimating interaction effects.
 </div>
 
