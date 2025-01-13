@@ -145,6 +145,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/24_project/";
+            },},{id: "projects-regression-discontinuity",
+          title: 'Regression Discontinuity',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/25_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
