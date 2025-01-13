@@ -8,7 +8,7 @@ category: applications
 related_publications: true
 ---
 
-The Impact of Private Hosting on Ukrainian Refugee Integration
+### The Impact of Private Hosting on Ukrainian Refugee Integration
 
 In {% cite herpell2024privatehosting %}, we examine how private hosting affects the integration of Ukrainian refugees during the ongoing displacement crisis. Using data from one of Europe’s largest non-profit matching platforms for private refugee accommodation, we implement a quasi-experimental design. Refugees matched with private hosts are compared to similar refugees who applied for hosting but were not matched, allowing us to isolate the causal effects of private hosting on integration outcomes.
 
