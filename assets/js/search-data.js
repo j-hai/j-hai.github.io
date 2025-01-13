@@ -160,8 +160,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/27_project/";
-            },},{id: "projects-congressional-stock-trading",
-          title: 'Congressional Stock Trading',
+            },},{id: "projects-retrospective-voting",
+          title: 'Retrospective Voting',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/28_project/";
