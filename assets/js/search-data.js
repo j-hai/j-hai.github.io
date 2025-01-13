@@ -140,6 +140,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/23_project/";
+            },},{id: "projects-active-labor-market-policies",
+          title: 'Active Labor Market Policies',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/24_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
