@@ -149,7 +149,17 @@ ninja.data = [{
           title: 'Regression Discontinuity',
           description: "",
           section: "Projects",handler: () => {
+              window.location.href = "/projects/25_project-copy-2/";
+            },},{id: "projects-regression-discontinuity",
+          title: 'Regression Discontinuity',
+          description: "",
+          section: "Projects",handler: () => {
               window.location.href = "/projects/25_project/";
+            },},{id: "projects-incumbency-advantage",
+          title: 'Incumbency Advantage',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/26_project/";
             },},{id: "projects-synthetic-control-methods",
           title: 'Synthetic Control Methods',
           description: "",
