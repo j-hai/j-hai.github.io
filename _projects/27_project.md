@@ -4,7 +4,7 @@ title: Fair Trade
 description: 
 img: assets/img/fairtrade.jpeg
 importance: 1
-category: methods
+category: applications
 related_publications: true
 ---
 
