@@ -190,6 +190,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/32_project_dresden/";
+            },},{id: "projects-framing-effects",
+          title: 'Framing Effects',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/33_project_frameing/";
             },},{id: "projects-immigration-policy-lab-ipl",
           title: 'Immigration Policy Lab (IPL)',
           description: "",
