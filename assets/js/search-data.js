@@ -160,8 +160,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/27_project/";
-            },},{id: "projects-retrospective-voting",
-          title: 'Retrospective Voting',
+            },},{id: "projects-congressional-stock-trading",
+          title: 'Congressional Stock Trading',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/28_project/";
@@ -175,6 +175,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-electoral-balancing",
+          title: 'Electoral Balancing',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/30_project_midtermloss/";
             },},{id: "projects-immigration-policy-lab-ipl",
           title: 'Immigration Policy Lab (IPL)',
           description: "",
