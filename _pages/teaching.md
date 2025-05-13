@@ -13,19 +13,19 @@ In collaboration with my methodology colleagues in the department, I developed t
 
 ### POLISCI 450A: Political Methodology I
 An introduction to quantitative political methodology, this course covers the foundational principles of probability, statistics, and regression models essential for political science research. Students will develop skills in statistical reasoning and data analysis, focusing on applying linear regression to real-world problems.  
-[Syllabus (PDF)](PS450A_syllabus.pdf)  
+[Syllabus (PDF)](/assets/teaching/PS450A_syllabus.pdf)  
 
 ---
 
 ### POLISCI 450B: Political Methodology II - Causal Inference
 This course explores advanced tools for causal inference, focusing on understanding and applying experimental designs, matching, difference-in-differences, synthetic control methods, instrumental variables, and regression discontinuity designs. It prepares students to evaluate and conduct empirical research in political science and public policy.  
-[Syllabus (PDF)](PS450B_2025.pdf)  
+[Syllabus (PDF)](/assets/teaching/PS450B_2025.pdf)  
 
 ---
 
 ### POLISCI 450C: Model-Based Inference and Machine Learning
 This course bridges model-based theories of inference and cutting-edge machine learning techniques. Topics include generalized linear models, regularization, missing data, latent-variable models, and machine learning approaches like tree-based models and LASSO. Students learn to evaluate complex statistical models and their contributions to political science.  
-[Syllabus (PDF)](Syll450c_18.pdf)  
+[Syllabus (PDF)](/assets/teaching/Syll450c_18.pdf)  
 
 ---
 
