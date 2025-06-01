@@ -30,7 +30,9 @@ In {% cite yasenov2020public %}, we explored the effects of public health insura
 
 In {% cite kim2023neighborhood %}, we conducted a quasi-experimental study examining the relationship between neighborhood disadvantage and the risk of dementia and mortality among refugees in Denmark. Our findings highlighted that refugees resettled in disadvantaged neighborhoods faced higher risks of dementia and mortality, underscoring the long-term health impacts of resettlement policies and neighborhood environments.
 
+### National Birth Outcomes and Care Utilization  for Infants of Emergency Medicaid Eligible Parents
 
+In {% cite qian2025national %}, we examine birth outcomes and care utilization for infants born to individuals covered by Emergency Medicaid (EM)-a limited benefit program for life-threatening conditions, including labor and delivery, available to immigrants otherwise ineligible for Medicaid. While prior research focused on a handful of states, this study uses national data to provide the first comprehensive comparison of outcomes between infants born to EM versus non-EM Medicaid recipients. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
