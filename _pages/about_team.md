@@ -12,7 +12,9 @@
 - [Elisabeth Paulson](https://elisabethpaulson.github.io/) (Harvard Business School)
 - [Lilla Orr](https://lillaorr.com/) (University of Richmond)
 - [Cesar Vargas Nunez](https://sites.google.com/stanford.edu/cesarvargasnunez/home) (University of California Los Angeles)
-- [Anand Kalvit](https://sites.google.com/view/anandkalvit/bio) (ongoing)
+- [Anand Kalvit](https://sites.google.com/view/anandkalvit/bio) (Amazon)
+- [Ahmet Gulek](https://ahmetgulek.github.io/) (ongoing)
+
 
 #### Ph.D. Students (Main Dissertation Advisor)
 - [Chad Hazlett](https://www.chadhazlett.com/) (University of California Los Angeles)
