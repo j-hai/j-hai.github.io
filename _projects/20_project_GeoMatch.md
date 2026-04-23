@@ -1,7 +1,7 @@
 ---
 layout: page
 title: GeoMatch
-description: 
+description: Human-centered AI tools to optimize location decisions for newcomers, deployed with governments in the U.S., Canada, Switzerland, and the Netherlands.
 img: assets/img/GeoMatch.jpeg
 importance: 1
 redirect: https://immigrationlab.org/geomatch/
