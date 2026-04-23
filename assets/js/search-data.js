@@ -122,7 +122,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project_interflex/";
             },},{id: "projects-geomatch",
           title: 'GeoMatch',
-          description: "",
+          description: "Human-centered AI tools to optimize location decisions for newcomers, deployed with governments in the U.S., Canada, Switzerland, and the Netherlands.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/20_project_GeoMatch/";
             },},{id: "projects-refugee-housing",
