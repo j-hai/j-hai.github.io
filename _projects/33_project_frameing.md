@@ -2,7 +2,7 @@
 layout: page
 title: Framing Effects
 description: 
-img: assets/img/frameing.jpeg
+img: assets/img/frameing.jpg
 importance: 1
 category: applications
 related_publications: true
@@ -19,7 +19,7 @@ These results highlight both the influence and the limits of framing effects in 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/frameing2.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/frameing2.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

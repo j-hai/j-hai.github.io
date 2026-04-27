@@ -31,19 +31,19 @@ This course bridges model-based theories of inference and cutting-edge machine l
 
 ### POLISCI 450D: Advanced Topics in Political Methodology
 This capstone course in the quantitative methodology sequence covers advanced empirical tools for political science research. Topics include conjoint experiments, causal mediation and moderation, randomization inference, and Bayesian inference. The course emphasizes the application of these methods to students' own research projects.  
-[Syllabus (PDF)](assets/pdf/PS450D_2020.pdf)  
+[Syllabus (PDF)](/assets/pdf/PS450D_2020.pdf)  
 
 ---
 
 ### POLISCI 150C/355C: Causal Inference for Social Science
 An undergraduate level introduction to modern causal inference methods. This course covers experimental designs, matching, regression, instrumental variables, and regression discontinuity methods with applications across public policy, sociology, and economics.  
-[Syllabus (PDF)](assets/pdf/PS150c_2024.pdf)  
+[Syllabus (PDF)](/assets/pdf/PS150c_2024.pdf)  
 
 ---
 
 ### POLISCI 481: Designing Your Dissertation, Part I
 A graduate seminar guiding students through the development of their dissertation prospectus. The course emphasizes defining research questions, reviewing existing literature, developing theoretical frameworks, and designing research methodologies. Collaboration and feedback are central to the course, helping students refine their research at every stage.  
-[Syllabus (PDF)](Polisci481-Syllabus-2024-12-01.pdf)  
+[Syllabus (PDF)](/assets/pdf/Polisci481-Syllabus-2024-12-01.pdf)  
 
 ---
 
