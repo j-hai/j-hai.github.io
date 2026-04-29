@@ -1,10 +1,15 @@
-github_users:
-  - j-hai
- 
+# Show the "GitHub users" card section by listing usernames here.
+# Currently disabled — the page renders only the GitHub Repositories list.
+# github_users:
+#   - j-hai
+
 repo_description_lines_max: 2
 
 github_repos:
+- j-hai/ebal
+- j-hai/Synth
 - xuyiqing/interflex
+- xuyiqing/sconjoint
 - astrezhnev/conjointsdt
 - apoorvalal/EBAL-in-CVXR
 - apoorvalal/synthlearners
