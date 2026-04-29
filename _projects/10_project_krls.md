@@ -16,7 +16,7 @@ We argue that KRLS is particularly well-suited for social science applications b
 
 The R package was updated to version 1.1-0 in April 2026 with a fix for an R 4.4+ deprecation that fired twice on every fit (`Eigenobject$values + lambda` recycled a 1×1 matrix), cleaner errors when methods receive non-`krls` input, and DESCRIPTION modernization. Source on [GitHub](https://github.com/j-hai/KRLS).
 
-The Stata routine was likewise updated to version 1.02 in April 2026 — fixing a stray-apostrophe parse glitch on the `svcov()` option path, dead options, and the `kpredict` syntax declaration, plus a `version 11` → `version 13` bump. No numerical changes; verified byte-for-byte against the 1.01 baseline. Source on [GitHub](https://github.com/j-hai/krls-stata).
+The Stata routine was likewise updated to version 1.03 in April 2026 — bug fixes (stray-apostrophe parse glitch on the `svcov()` option path, dead options, the `kpredict` syntax declaration), a `version 11` → `version 13` bump, and a performance pass that vectorized the pairwise-distance helpers via the BLAS identity `‖x_i − x_j‖² = ‖x_i‖² + ‖x_j‖² − 2 x_iᵀx_j` (~1.2–1.3× faster across n = 100…600). No numerical changes; verified byte-for-byte against the 1.01 baseline. Source on [GitHub](https://github.com/j-hai/krls-stata).
 
 #### Resources:
 
