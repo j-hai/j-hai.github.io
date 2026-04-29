@@ -1,0 +1,66 @@
+name: Refresh Scholar cache
+
+# Top up _data/scholar_cache.json incrementally. Each run fetches a
+# small batch (--max=15) so Scholar is unlikely to rate-limit us, and
+# already-cached entries are skipped by default. Over the course of
+# several days this fills the cache from any partial state to full.
+#
+# The workflow only commits if the cache JSON actually changed, so
+# stable days don't churn git history. It also runs on workflow_dispatch
+# so you can trigger it manually from the Actions tab when you need
+# fresh numbers right now.
+
+on:
+  schedule:
+    # Daily at 04:17 UTC. Off-peak so we're less likely to share the
+    # Scholar IP block with someone else who's also scraping.
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+    inputs:
+      max:
+        description: 'Max successful fetches per run'
+        required: false
+        default: '15'
+      force:
+        description: 'Re-fetch already-cached entries'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install gems used by the refresh script
+        run: gem install nokogiri
+
+      - name: Refresh cache
+        run: |
+          ARGS="--max=${{ github.event.inputs.max || '15' }}"
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          ruby bin/refresh_scholar_cache.rb $ARGS
+
+      - name: Commit cache if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- _data/scholar_cache.json; then
+            git add _data/scholar_cache.json
+            CHANGED=$(git diff --cached --numstat _data/scholar_cache.json | awk '{print $1+$2}')
+            git commit -m "Refresh Scholar cache (${CHANGED} JSON lines changed)"
+            git push
+            echo "Committed cache changes."
+          else
+            echo "No changes to _data/scholar_cache.json — nothing to commit."
+          fi
