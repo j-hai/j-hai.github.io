@@ -12,12 +12,14 @@ The synthetic control method enables researchers to estimate causal effects by c
 
 The R package was updated to version 1.1-10 in April 2026 with bug fixes (notably the `quadopt = "LowRankQP"` fail-fast and the missing-data check in `dataprep()`), quieter defaults (`synth(verbose = FALSE)` is now silent), and a `path.plot()` y-axis fix for negative-valued series. Source on [GitHub](https://github.com/j-hai/Synth).
 
+The Stata routine was likewise updated in April 2026 to version 0.0.8 with **native Apple Silicon support** (the optimizer plugin now ships an arm64 Mach-O slice; previously it failed to load on M-series Macs running Stata 17+ natively), portable C source that compiles cleanly on macOS / Linux / Windows, and typo / version-declaration cleanup. Source on [GitHub](https://github.com/j-hai/synth-stata).
+
 ---
 [Synth for R](https://cran.r-project.org/web/packages/Synth/index.html) — also on [GitHub](https://github.com/j-hai/Synth)
 
 ---
 
-[Synth for Stata](https://ideas.repec.org/c/boc/bocode/s457334.html)
+[Synth for Stata](https://ideas.repec.org/c/boc/bocode/s457334.html) — also on [GitHub](https://github.com/j-hai/synth-stata)
 
 ---
 [Explainer for R and Stata](https://lost-stats.github.io/Model_Estimation/Research_Design/synthetic_control_method.html)

@@ -14,9 +14,11 @@ In {% cite hainmueller2014kernel %}, the use of Kernel Regularized Least Squares
 
 We argue that KRLS is particularly well-suited for social science applications because it avoids strong parametric assumptions while remaining interpretable, similar to generalized linear models. Additionally, it allows for the exploration of nonlinearities, interactions, and heterogeneous effects. To support other researchers, we developed an R package and a Stata routine that make these methods accessible {% cite ferwerda2017kernel %}.
 
+The R package was updated to version 1.1-0 in April 2026 with a fix for an R 4.4+ deprecation that fired twice on every fit (`Eigenobject$values + lambda` recycled a 1×1 matrix), cleaner errors when methods receive non-`krls` input, and DESCRIPTION modernization. Source on [GitHub](https://github.com/j-hai/KRLS).
+
 #### Resources:
 
-- [KRLS in R](https://cran.r-project.org/web/packages/KRLS/index.html)
+- [KRLS in R](https://cran.r-project.org/web/packages/KRLS/index.html) — also on [GitHub](https://github.com/j-hai/KRLS)
 - [KRLS in Stata](http://dx.doi.org/10.18637/jss.v079.i03)
 
 <div class="row">
