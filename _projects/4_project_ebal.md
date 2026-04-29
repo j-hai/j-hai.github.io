@@ -12,9 +12,10 @@ Entropy Balancing is a statistical method implemented as both an R package and a
 
 The method is based on the approaches developed in {% cite hainmueller2012entropy %} and {% cite hainmueller2013ebalance %} , and it won the Warren Miller Award from the Society of Political Methodology in 2020.
 
+The R package was substantially updated to version 0.2.1 in April 2026 — adding a formula interface (`ebalance(treat ~ x1 + x2, data = df)`), `print()`/`summary()`/`plot()`/`weights()` S3 methods, and numerical hardening for `ebalance.trim()`. Source on [GitHub](https://github.com/j-hai/ebal).
 
 ---
-[Entropy Balancing for R](https://search.r-project.org/CRAN/refmans/ebal/html/ebalance.html)
+[Entropy Balancing for R](https://search.r-project.org/CRAN/refmans/ebal/html/ebalance.html) — also on [GitHub](https://github.com/j-hai/ebal)
 
 ---
 

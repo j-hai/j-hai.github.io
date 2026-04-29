@@ -10,9 +10,10 @@ related_publications: true
 
 The synthetic control method enables researchers to estimate causal effects by constructing a synthetic version of a treatment unit through a weighted combination of control units. It is implemented as both an R package and a Stata routine, based on the methods developed in the following papers {% cite abadie2010synthetic %}, {% cite abadie2015comparative %}, and {% cite abadie2011synth %}. This work was awarded the Gosnell Prize for Excellence in Political Methodology.
 
+The R package was updated to version 1.1-10 in April 2026 with bug fixes (notably the `quadopt = "LowRankQP"` fail-fast and the missing-data check in `dataprep()`), quieter defaults (`synth(verbose = FALSE)` is now silent), and a `path.plot()` y-axis fix for negative-valued series. Source on [GitHub](https://github.com/j-hai/Synth).
 
 ---
-[Synth for R](https://cran.r-project.org/web/packages/Synth/index.html)
+[Synth for R](https://cran.r-project.org/web/packages/Synth/index.html) — also on [GitHub](https://github.com/j-hai/Synth)
 
 ---
 
