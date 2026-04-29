@@ -7,10 +7,11 @@ repo_description_lines_max: 2
 
 github_repos:
 - j-hai/ebal
+- j-hai/ebal-stata
 - j-hai/Synth
+- j-hai/synth-stata
 - j-hai/KRLS
 - j-hai/krls-stata
-- j-hai/synth-stata
 - xuyiqing/interflex
 - xuyiqing/sconjoint
 - astrezhnev/conjointsdt

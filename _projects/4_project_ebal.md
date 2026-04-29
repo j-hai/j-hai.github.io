@@ -14,12 +14,14 @@ The method is based on the approaches developed in {% cite hainmueller2012entrop
 
 The R package was substantially updated to version 0.2.1 in April 2026 — adding a formula interface (`ebalance(treat ~ x1 + x2, data = df)`), `print()`/`summary()`/`plot()`/`weights()` S3 methods, and numerical hardening for `ebalance.trim()`. Source on [GitHub](https://github.com/j-hai/ebal).
 
+The Stata routine was likewise updated to version 1.5.4 in April 2026 with bug fixes — a leftover debug print on the `basewt()` path, a wrong-variable-name in the 3rd-moment failure diagnostic, and silent-failure exits (the program reported errors but `exit` returned success, so user scripts couldn't detect the failure via `_rc`). No numerical changes; verified byte-for-byte against the 1.5.3 baseline. Source on [GitHub](https://github.com/j-hai/ebal-stata).
+
 ---
 [Entropy Balancing for R](https://search.r-project.org/CRAN/refmans/ebal/html/ebalance.html) — also on [GitHub](https://github.com/j-hai/ebal)
 
 ---
 
-[Entropy Balancing for Stata](https://www.jstatsoft.org/article/view/v054i07)
+[Entropy Balancing for Stata](https://www.jstatsoft.org/article/view/v054i07) — also on [GitHub](https://github.com/j-hai/ebal-stata)
 
 ---
 
