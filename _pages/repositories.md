@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: coming soon
+description: software packages and methodological tools
 nav: true
 nav_order: 4
 ---
