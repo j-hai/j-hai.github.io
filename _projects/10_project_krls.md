@@ -22,6 +22,7 @@ The Stata routine was likewise updated to version 1.03 in April 2026 — bug fix
 
 - [KRLS in R](https://cran.r-project.org/web/packages/KRLS/index.html) — also on [GitHub](https://github.com/j-hai/KRLS)
 - [KRLS in Stata](http://dx.doi.org/10.18637/jss.v079.i03) — also on [GitHub](https://github.com/j-hai/krls-stata)
+- [Explainer for R and Stata](/projects/Kernel-Regularized-Least-Squares-—-an-Explainer/) — a self-contained tutorial on what KRLS gives you that OLS doesn't, with worked examples in both R and Stata.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

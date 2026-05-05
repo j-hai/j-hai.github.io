@@ -85,4 +85,4 @@ The Stata routine was likewise updated in April 2026 to version 0.0.8 with **nat
 [Synth for Stata](https://ideas.repec.org/c/boc/bocode/s457334.html) — also on [GitHub](https://github.com/j-hai/synth-stata)
 
 ---
-[Explainer for R and Stata](https://lost-stats.github.io/Model_Estimation/Research_Design/synthetic_control_method.html)
+[Explainer for R and Stata](/projects/Synthetic-Control-Methods-—-an-Explainer/) — a self-contained tutorial on the synthetic control method for users coming from either language, with the canonical Proposition 99 example worked end-to-end in both `Synth` (R) and `synth` (Stata).
