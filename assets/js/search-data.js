@@ -200,6 +200,16 @@ ninja.data = [{
           description: "How entropy balancing works, when to use it, and how to run it in R and Stata.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/36_project_ebal_explainer/";
+            },},{id: "projects-synthetic-control-methods-an-explainer",
+          title: 'Synthetic Control Methods — an Explainer',
+          description: "How synthetic control works, when to use it, and how to run it in R and Stata.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/37_project_synth_explainer/";
+            },},{id: "projects-kernel-regularized-least-squares-an-explainer",
+          title: 'Kernel Regularized Least Squares — an Explainer',
+          description: "How KRLS works, when to use it, and how to run it in R and Stata.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/38_project_krls_explainer/";
             },},{id: "projects-immigration-policy-lab-ipl",
           title: 'Immigration Policy Lab (IPL)',
           description: "",
