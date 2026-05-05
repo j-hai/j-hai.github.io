@@ -106,6 +106,53 @@ Running all three on Lalonde and adding 95% bootstrap CIs (250 reps) produces a 
     Forest plot of effect estimates by estimand. The naive difference is badly negative (-635). The ATT (+1273) lands closest to the experimental benchmark (+1794, dotted green line) — exactly the right answer for "what was the effect on those who actually trained?". The ATE (+952) and ATC (+212) drift away because they extrapolate the training effect to PSID-like respondents who would never realistically have entered the program; the bootstrap CIs widen accordingly. The takeaway is policy-relevant rather than just numerical: <em>which estimand you pick is itself a substantive choice about which population you're inferring about.</em>
 </div>
 
+### Combining ebal with difference-in-differences
+
+A common applied pattern is to use ebal as the *first stage* of a DID design: ebal-weighted DID handles unobserved time-invariant confounders (via the difference) and observed covariate imbalance (via the weights) simultaneously. The Lalonde data has earnings in 1974, 1975, and 1978 — so we can check parallel trends with a 1975 placebo.
+
+We deliberately balance on **demographics only** (age, education, race, marital status, no-degree status) and *leave prior earnings out of the constraints*. The point is to see whether DID + ebal can absorb the time-invariant earnings level difference between NSW and PSID without having seen those earnings during balancing.
+
+```r
+library(ebal)
+data(lalonde, package = "cobalt")
+
+# 1) Balance on demographics only
+X <- model.matrix(~ age + educ + race + married + nodegree, data = lalonde)
+X <- X[, colnames(X) != "(Intercept)"]
+fit <- ebalance(Treatment = lalonde$treat, X = X, estimand = "ATT")
+lalonde$w <- weights(fit)
+
+# 2) DID using 1974 as the pre-period
+did <- function(post, pre = "re74", w = lalonde$w) {
+  d_t <- mean(lalonde[lalonde$treat == 1, post]) -
+         mean(lalonde[lalonde$treat == 1, pre])
+  d_c <- weighted.mean(lalonde[lalonde$treat == 0, post],
+                       w = w[lalonde$treat == 0]) -
+         weighted.mean(lalonde[lalonde$treat == 0, pre],
+                       w = w[lalonde$treat == 0])
+  d_t - d_c
+}
+
+did("re75")  # 1975 placebo (training was 1976-77, so this should be ~0)
+#> +1145
+did("re78")  # 1978 effect
+#> +2181   (experimental benchmark = +1794)
+
+# Equivalent regression form, drop-in for clustered SEs / fixed effects:
+# library(fixest); feols(re78 - re74 ~ treat, data = lalonde, weights = ~w)
+```
+
+The DID + ebal estimate **+2181** (95% bootstrap CI [+414, +3857] over 250 reps) brackets the experimental benchmark of +1794, even though we never told `ebalance()` about prior earnings. The 1975 placebo (+1145) is closer to zero than the unweighted 1975 placebo (+2589) but not zero, which is honest about demographics-only balancing — a user iterating on this design would naturally add re74 to the balance constraints to flatten the placebo further.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ebal_lalonde_did.png" title="Lalonde NSW: ebal + DID earnings trajectories" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Mean earnings trajectories by group and year. The blue solid line is the NSW treated; the red dashed line is the raw PSID controls (huge level offset, classic Lalonde "bias"); the green solid line is the ebal-reweighted PSID controls. After demographic balancing alone, the level offset largely closes by 1974 (~$2,100 vs $3,300). The DID estimate compares the 1974→1978 change between treated and ebal-weighted controls; the small remaining gap in 1975 is the placebo test (would be exactly zero if we'd also balanced on prior earnings).
+</div>
+
 The weight distributions make the underlying mechanic visible:
 
 <div class="row">
