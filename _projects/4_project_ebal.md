@@ -16,6 +16,7 @@ The method is based on the approaches developed in {% cite hainmueller2012entrop
 
 The R package gained a substantial set of additions in May 2026:
 
+* **ATT / ATE / ATC estimands.** A new `estimand` argument on `ebalance()` selects which causal quantity the weights target: `"ATT"` (default; the original behavior — controls reweighted to match treated), `"ATC"` (treated reweighted to match controls), and `"ATE"` (both groups reweighted to match the overall sample). For ATE the returned object carries per-side solves and `weights(fit)` returns a length-n vector that drops straight into `lm(..., weights = w)` for the population effect.
 * **Autodiff solver via `torch`.** A new `method = "autodiff"` argument runs BFGS on gradients computed by automatic differentiation — more stable when the dual loss is poorly conditioned and scales better at large covariate counts. Newton-Raphson remains the default. **Contributed by Apoorva Lal**, ported from his fork at [github.com/apoorvalal/ebal](https://github.com/apoorvalal/ebal); Apoorva is now listed as `aut` on the package.
 * **Tidyverse-friendly extractors.** `tidy()`, `glance()`, `augment()` registered against the `generics` package generics, so `library(broom)` makes them discoverable. `as.data.frame.ebalance()` returns the balance table.
 * **`ggplot2` Love plot.** `autoplot(fit)` produces a publication-ready figure of standardized differences before vs. after weighting.
@@ -75,6 +76,45 @@ Newton and autodiff produce **the same ATT estimate to the dollar**, confirming 
 </div>
 <div class="caption">
     Love plot from <code>autoplot()</code>: standardized differences between the NSW treated group and the PSID controls. Open circles are the raw differences (every covariate is far from zero, with race and marriage status as the worst offenders). Filled dots are the post-weighting differences — exact zero for every covariate by construction.
+</div>
+
+### Comparing estimands: ATT vs ATE vs ATC
+
+The 0.3-0 `estimand` argument lets you pick which question the weights answer:
+
+```r
+fit_att <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
+                    data = lalonde, estimand = "ATT")
+fit_ate <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
+                    data = lalonde, estimand = "ATE")
+fit_atc <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
+                    data = lalonde, estimand = "ATC")
+
+# For ATE, both groups carry estimated weights; weights(fit) handles it.
+df$w <- weights(fit_ate)
+coef(lm(re78 ~ treat, data = df, weights = w))[2]
+```
+
+Running all three on Lalonde and adding 95% bootstrap CIs (250 reps) produces a clean visual of how each estimand answers a different question:
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ebal_lalonde_estimands.png" title="Lalonde NSW: ATT vs ATE vs ATC point estimates with bootstrap CIs" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Forest plot of effect estimates by estimand. The naive difference is badly negative (-635). The ATT (+1273) lands closest to the experimental benchmark (+1794, dotted green line) — exactly the right answer for "what was the effect on those who actually trained?". The ATE (+952) and ATC (+212) drift away because they extrapolate the training effect to PSID-like respondents who would never realistically have entered the program; the bootstrap CIs widen accordingly. The takeaway is policy-relevant rather than just numerical: <em>which estimand you pick is itself a substantive choice about which population you're inferring about.</em>
+</div>
+
+The weight distributions make the underlying mechanic visible:
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ebal_lalonde_weights.png" title="Per-unit weight distributions across the three estimands" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Per-unit weight distributions across the three estimands. <strong>ATT</strong>: treated all carry weight 1, controls reweighted toward the treated (right tail). <strong>ATE</strong>: both groups reweighted toward the overall sample — controls cluster near 1, treated spike upward to compensate. <strong>ATC</strong>: roles flipped — controls all carry weight 1, treated stretched out to "look like" PSID respondents.
 </div>
 
 The previous release (0.2.1, April 2026) added a formula interface (`ebalance(treat ~ x1 + x2, data = df)`), `print()`/`summary()`/`plot()`/`weights()` S3 methods, and numerical hardening for `ebalance.trim()`. Source on [GitHub](https://github.com/j-hai/ebal).
