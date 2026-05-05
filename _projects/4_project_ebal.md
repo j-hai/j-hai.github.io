@@ -10,64 +10,60 @@ related_publications: true
 
 Entropy Balancing is a statistical method implemented as both an R package and a Stata routine, designed for reweighting data to achieve covariate balance in observational studies.
 
-The method is based on the approaches developed in {% cite hainmueller2012entropy %} and {% cite hainmueller2013ebalance %} , and it won the Warren Miller Award from the Society of Political Methodology in 2020.
+The method is based on the approaches developed in {% cite hainmueller2012entropy %} and {% cite hainmueller2013ebalance %}, and it won the Warren Miller Award from the Society of Political Methodology in 2020.
 
-## What's new in `ebal` 0.3-0 (May 2026)
-
-The R package gained a substantial set of additions in May 2026:
-
-* **ATT / ATE / ATC estimands.** A new `estimand` argument on `ebalance()` selects which causal quantity the weights target: `"ATT"` (default; the original behavior — controls reweighted to match treated), `"ATC"` (treated reweighted to match controls), and `"ATE"` (both groups reweighted to match the overall sample). For ATE the returned object carries per-side solves and `weights(fit)` returns a length-n vector that drops straight into `lm(..., weights = w)` for the population effect.
-* **Autodiff solver via `torch`.** A new `method = "autodiff"` argument runs BFGS on gradients computed by automatic differentiation — more stable when the dual loss is poorly conditioned and scales better at large covariate counts. Newton-Raphson remains the default. **Contributed by Apoorva Lal**, ported from his fork at [github.com/apoorvalal/ebal](https://github.com/apoorvalal/ebal); Apoorva is now listed as `aut` on the package.
-* **Tidyverse-friendly extractors.** `tidy()`, `glance()`, `augment()` registered against the `generics` package generics, so `library(broom)` makes them discoverable. `as.data.frame.ebalance()` returns the balance table.
-* **`ggplot2` Love plot.** `autoplot(fit)` produces a publication-ready figure of standardized differences before vs. after weighting.
-* **Quickstart vignette.** `vignette("ebal-quickstart", package = "ebal")` walks through a worked example with both solver methods.
-* **Five validated bug fixes** rolled in: stricter `base.weight` validation, NA-safe `Treatment` and formula handling, autodiff coefficient round-trip, and a double-multiplier bug in `ebalance.trim()` that was over-trimming feasible targets.
-
-### Worked example: Lalonde NSW vs. PSID controls
-
-The 1986 Lalonde benchmark — NSW job-training trial controls replaced by 429 PSID respondents — is the textbook stress test for covariate-adjustment methods. The naive comparison gives a massively biased estimate. With `ebal` 0.3-0 the workflow is six lines:
+## The four-line workflow
 
 ```r
-library(ebal); library(generics); library(ggplot2)
-data(lalonde, package = "cobalt")
-
-# Naive ATT (wrong sign, wrong magnitude)
-with(lalonde, mean(re78[treat == 1]) - mean(re78[treat == 0]))
-#> -635   (experimental benchmark = +1794)
-
-# Build the design matrix
-X <- model.matrix(~ age + educ + race + married + nodegree + re74 + re75,
-                  data = lalonde)
-X <- X[, colnames(X) != "(Intercept)"]
-
-# Newton solver (default)
-fit <- ebalance(Treatment = lalonde$treat, X = X)
-
-# Autodiff solver (Apoorva Lal's contribution)
-fit_ad <- ebalance(Treatment = lalonde$treat, X = X, method = "autodiff")
-
-# Balance table — every standardized difference is now zero (within tol)
-tidy(fit)[, c("term", "std_diff_pre", "std_diff_post")]
-#>        term std_diff_pre std_diff_post
-#>         age       -0.242             0
-#>        educ        0.045             0
-#>  racehispan       -0.277             0
-#>   racewhite       -1.406             0
-#>     married       -0.719             0
-#>    nodegree        0.235             0
-#>        re74       -0.596             0
-
-# Weighted regression for the ATT
-df <- lalonde
-df$w <- ifelse(lalonde$treat == 1, 1, fit$w)
-coef(lm(re78 ~ treat, data = df, weights = w))[2]
-#> +1273   (vs. naive -635, vs. experimental +1794)
-
-# Love plot via autoplot
-autoplot(fit)
+fit <- ebalance(treat ~ x1 + x2 + x3, data = df)   # 1. fit weights
+balance_table(fit)                                 # 2. check balance
+df$w <- weights(fit)                               # 3. attach weights
+lm(y ~ treat, data = df, weights = w)              # 4. estimate effect
 ```
 
-Newton and autodiff produce **the same ATT estimate to the dollar**, confirming the two solvers are numerically equivalent on this real-data problem. The Kish effective sample size is 98 out of 429 controls — one quarter of the donor pool carries most of the weight, which is what you'd expect when the PSID-vs-NSW gap is this large.
+That's the full promise of the package: balance the covariates, get weights, run your regression. Everything else on this page is a refinement of those four lines.
+
+### Which estimand?
+
+| `estimand` | who gets reweighted | answers |
+|---|---|---|
+| `"ATT"` (default) | controls           | "what was the effect on those who got treatment?" |
+| `"ATC"`           | treated            | "what would the effect have been on the controls?" |
+| `"ATE"`           | both               | "what is the average effect across the population?" |
+
+Always read weights via `weights(fit)`. It returns a length-`n` vector aligned to the original `Treatment`/`X` and routes the per-side semantics correctly.
+
+## Worked example: Lalonde NSW vs. PSID controls
+
+The 1986 Lalonde benchmark — NSW job-training trial controls replaced by 429 PSID respondents — is the textbook stress test for covariate-adjustment methods. The naive comparison is badly biased; ebalance recovers an estimate close to the experimental benchmark of +$1,794.
+
+```r
+library(ebal); library(generics)
+data(lalonde, package = "cobalt")
+
+# 1. Fit
+fit <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
+                data = lalonde)
+
+# 2. Check balance
+balance_table(fit)[, c("variable", "std_diff_pre", "std_diff_post")]
+#>      variable std_diff_pre std_diff_post
+#> 1         age       -0.242             0
+#> 2        educ        0.045             0
+#> 3  racehispan       -0.277             0
+#> 4   racewhite       -1.406             0
+#> 5     married       -0.719             0
+#> 6    nodegree        0.235             0
+#> 7        re74       -0.596             0
+#> 8        re75       -0.297             0
+
+# 3. Attach weights (length = nrow(lalonde); treated = 1, controls reweighted)
+lalonde$w <- weights(fit)
+
+# 4. Estimate the ATT
+coef(lm(re78 ~ treat, data = lalonde, weights = w))[2]
+#> +1273   (vs. naive -635, vs. experimental benchmark +1794)
+```
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -75,27 +71,59 @@ Newton and autodiff produce **the same ATT estimate to the dollar**, confirming 
     </div>
 </div>
 <div class="caption">
-    Love plot from <code>autoplot()</code>: standardized differences between the NSW treated group and the PSID controls. Open circles are the raw differences (every covariate is far from zero, with race and marriage status as the worst offenders). Filled dots are the post-weighting differences — exact zero for every covariate by construction.
+    <strong>Balance check.</strong> Standardized differences between the NSW treated group and the PSID controls. Open circles are the raw differences (every covariate is far from zero, with race and marriage status as the worst offenders). Filled dots are the post-weighting differences — exact zero for every covariate by construction. <code>autoplot(fit)</code>.
 </div>
 
-### Comparing estimands: ATT vs ATE vs ATC
+### Robust standard errors
 
-The 0.3-0 `estimand` argument lets you pick which question the weights answer:
+`lm()`'s default standard errors don't account for the weighting. Use `sandwich::vcovHC()` (or `vcovCL()` if you have a clustering variable):
 
 ```r
-fit_att <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
-                    data = lalonde, estimand = "ATT")
-fit_ate <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
-                    data = lalonde, estimand = "ATE")
-fit_atc <- ebalance(treat ~ age + educ + race + married + nodegree + re74 + re75,
-                    data = lalonde, estimand = "ATC")
-
-# For ATE, both groups carry estimated weights; weights(fit) handles it.
-df$w <- weights(fit_ate)
-coef(lm(re78 ~ treat, data = df, weights = w))[2]
+library(sandwich); library(lmtest)
+mod <- lm(re78 ~ treat, data = lalonde, weights = w)
+coeftest(mod, vcov = vcovHC(mod, type = "HC1"))
 ```
 
-Running all three on Lalonde and adding 95% bootstrap CIs (250 reps) produces a clean visual of how each estimand answers a different question:
+### Is the fit healthy? `diagnostics()` and `glance()`
+
+```r
+diagnostics(fit)
+#> ebalance diagnostics  (estimand: ATT)
+#> --------------------------------------
+#>   control      PASS  effective sample size = 98 of 429, max/mean = 3.6
+#>   treated      PASS  effective sample size = 185 of 185, max/mean = 1.00
+#>   balance      PASS  max |std diff post| = 0.0000
+#>   converged    PASS  max moment deviation = 0.41
+```
+
+`generics::glance(fit)` is the same numbers in a one-row data frame — convenient for stitching across many fits. The headline is **ESS = 98 of 429**: the fit is concentrated on roughly a quarter of the donor pool, which is what you'd expect when the PSID-vs-NSW gap is this large.
+
+If `diagnostics()` flags low ESS or a high max/mean ratio, drill into the weight distribution itself:
+
+```r
+plot(fit, type = "weights")
+```
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ebal_lalonde_weightdiag.png" title="Per-unit weight distribution: ESS and max-weight ratio" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    <strong>Weight diagnostic.</strong> Subtitle reports the effective sample size and the ratio of the largest to the average weight. The dashed vertical line at <code>weight = 1</code> is the uniform-weighting baseline; mass to the right of it is over-represented PSID controls compensating for the PSID/NSW covariate gap, mass to the left is under-represented. This plot is a *check*, not a primary result — use it when ESS is low or the max-weight ratio looks alarming.
+</div>
+
+## Comparing estimands: ATT vs ATE vs ATC
+
+```r
+fit_att <- ebalance(treat ~ ..., data = lalonde, estimand = "ATT")
+fit_ate <- ebalance(treat ~ ..., data = lalonde, estimand = "ATE")
+fit_atc <- ebalance(treat ~ ..., data = lalonde, estimand = "ATC")
+
+# weights() does the right thing for each estimand
+lalonde$w <- weights(fit_ate)
+coef(lm(re78 ~ treat, data = lalonde, weights = w))[2]
+```
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -103,33 +131,28 @@ Running all three on Lalonde and adding 95% bootstrap CIs (250 reps) produces a 
     </div>
 </div>
 <div class="caption">
-    Forest plot of effect estimates by estimand. The naive difference is badly negative (-635). The ATT (+1273) lands closest to the experimental benchmark (+1794, dotted green line) — exactly the right answer for "what was the effect on those who actually trained?". The ATE (+952) and ATC (+212) drift away because they extrapolate the training effect to PSID-like respondents who would never realistically have entered the program; the bootstrap CIs widen accordingly. The takeaway is policy-relevant rather than just numerical: <em>which estimand you pick is itself a substantive choice about which population you're inferring about.</em>
+    Forest plot of effect estimates by estimand with 95% bootstrap CIs (250 reps). The naive difference (-635) is badly off. The ATT (+1273) lands closest to the experimental benchmark (+1794, dotted green line) — exactly the right answer for "what was the effect on those who actually trained?". The ATE (+952) and ATC (+212) drift away because they extrapolate to PSID-like respondents who would never realistically have entered the program; the bootstrap CIs widen accordingly. <em>Which estimand you pick is itself a substantive choice about the population you're inferring about.</em>
 </div>
 
-### Combining ebal with difference-in-differences
+## Combining ebal with difference-in-differences
 
 A common applied pattern is to use ebal as the *first stage* of a DID design: ebal-weighted DID handles unobserved time-invariant confounders (via the difference) and observed covariate imbalance (via the weights) simultaneously. The Lalonde data has earnings in 1974, 1975, and 1978 — so we can check parallel trends with a 1975 placebo.
 
 We deliberately balance on **demographics only** (age, education, race, marital status, no-degree status) and *leave prior earnings out of the constraints*. The point is to see whether DID + ebal can absorb the time-invariant earnings level difference between NSW and PSID without having seen those earnings during balancing.
 
 ```r
-library(ebal)
-data(lalonde, package = "cobalt")
-
 # 1) Balance on demographics only
-X <- model.matrix(~ age + educ + race + married + nodegree, data = lalonde)
-X <- X[, colnames(X) != "(Intercept)"]
-fit <- ebalance(Treatment = lalonde$treat, X = X, estimand = "ATT")
+fit <- ebalance(treat ~ age + educ + race + married + nodegree, data = lalonde)
 lalonde$w <- weights(fit)
 
 # 2) DID using 1974 as the pre-period
-did <- function(post, pre = "re74", w = lalonde$w) {
+did <- function(post, pre = "re74") {
   d_t <- mean(lalonde[lalonde$treat == 1, post]) -
          mean(lalonde[lalonde$treat == 1, pre])
   d_c <- weighted.mean(lalonde[lalonde$treat == 0, post],
-                       w = w[lalonde$treat == 0]) -
+                       w = lalonde$w[lalonde$treat == 0]) -
          weighted.mean(lalonde[lalonde$treat == 0, pre],
-                       w = w[lalonde$treat == 0])
+                       w = lalonde$w[lalonde$treat == 0])
   d_t - d_c
 }
 
@@ -142,7 +165,7 @@ did("re78")  # 1978 effect
 # library(fixest); feols(re78 - re74 ~ treat, data = lalonde, weights = ~w)
 ```
 
-The DID + ebal estimate **+2181** (95% bootstrap CI [+414, +3857] over 250 reps) brackets the experimental benchmark of +1794, even though we never told `ebalance()` about prior earnings. The 1975 placebo (+1145) is closer to zero than the unweighted 1975 placebo (+2589) but not zero, which is honest about demographics-only balancing — a user iterating on this design would naturally add re74 to the balance constraints to flatten the placebo further.
+The DID + ebal estimate **+2181** (95% bootstrap CI [+414, +3857]) brackets the experimental benchmark of +1794, even though we never told `ebalance()` about prior earnings. The 1975 placebo (+1145) is closer to zero than the unweighted 1975 placebo (+2589) but not zero, which is honest about demographics-only balancing — a user iterating on this design would naturally add `re74` to the balance constraints to flatten the placebo further.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -150,23 +173,21 @@ The DID + ebal estimate **+2181** (95% bootstrap CI [+414, +3857] over 250 reps)
     </div>
 </div>
 <div class="caption">
-    Mean earnings trajectories by group and year. The blue solid line is the NSW treated; the red dashed line is the raw PSID controls (huge level offset, classic Lalonde "bias"); the green solid line is the ebal-reweighted PSID controls. After demographic balancing alone, the level offset largely closes by 1974 (~$2,100 vs $3,300). The DID estimate compares the 1974→1978 change between treated and ebal-weighted controls; the small remaining gap in 1975 is the placebo test (would be exactly zero if we'd also balanced on prior earnings).
+    Mean earnings trajectories by group and year. The blue solid line is the NSW treated; the red dashed line is the raw PSID controls (huge level offset, classic Lalonde "bias"); the green solid line is the ebal-reweighted PSID controls. The DID estimate compares the 1974→1978 change between treated and ebal-weighted controls; the small remaining gap in 1975 is the placebo test.
 </div>
 
-The weight distributions make the underlying mechanic visible:
+## What's new in `ebal` 0.3-0 (May 2026)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/ebal_lalonde_weights.png" title="Per-unit weight distributions across the three estimands" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Per-unit weight distributions across the three estimands. <strong>ATT</strong>: treated all carry weight 1, controls reweighted toward the treated (right tail). <strong>ATE</strong>: both groups reweighted toward the overall sample — controls cluster near 1, treated spike upward to compensate. <strong>ATC</strong>: roles flipped — controls all carry weight 1, treated stretched out to "look like" PSID respondents.
-</div>
+* **ATT / ATE / ATC estimands** via the new `estimand` argument on `ebalance()`. `weights(fit)` returns the right length-`n` vector for each.
+* **`balance_table(fit)`** — exported, with explicit `mean_treated_pre/post`, `mean_control_pre/post`, `diff_pre/post`, `std_diff_pre/post`, `pct_reduction` columns. The same numbers feed `summary()`, `tidy()`, `plot()`, and `autoplot()`.
+* **`diagnostics(fit)`** — friendly "is my fit okay?" report with PASS / WARN / FAIL flags for ESS, balance, convergence, and trim feasibility.
+* **Weak-fit warnings at fit time** when ESS is below 30% of side n, max/mean weight ratio is above 10, or the solver didn't converge. Suppressible via `options(ebal.warn_weak_fit = FALSE)`.
+* **Two new vignettes:** `vignette("estimands")` and `vignette("outcome-models")`.
+* **Autodiff solver** (advanced, opt-in): `method = "autodiff"` runs BFGS on `torch`-computed gradients instead of Newton-Raphson. More stable on poorly conditioned dual losses; **contributed by Apoorva Lal**, ported with attribution from his fork at [github.com/apoorvalal/ebal](https://github.com/apoorvalal/ebal). Apoorva is now listed as `aut` on the package.
 
-The previous release (0.2.1, April 2026) added a formula interface (`ebalance(treat ~ x1 + x2, data = df)`), `print()`/`summary()`/`plot()`/`weights()` S3 methods, and numerical hardening for `ebalance.trim()`. Source on [GitHub](https://github.com/j-hai/ebal).
+The previous release (0.2.1, April 2026) added the formula interface, `print()` / `summary()` / `plot()` / `weights()` S3 methods, and numerical hardening for `ebalance.trim()`.
 
-The Stata routine was likewise updated to version 1.5.5 in April 2026 with bug fixes (a leftover debug print, a wrong-variable-name in the 3rd-moment failure diagnostic, silent-failure exits that bypassed `_rc`), a new `quietly` option for production scripts, a `replace` option that now also applies to `gen()`, and numerical hardening (cap on the linear predictor before `exp()` to prevent `Inf → NaN` propagation under ill-conditioned data). No numerical changes; verified byte-for-byte against the 1.5.3 baseline. Source on [GitHub](https://github.com/j-hai/ebal-stata).
+The Stata routine was also updated in April 2026 to version 1.5.5 with bug fixes, a new `quietly` option, a `replace` option for `gen()`, and a cap on the linear predictor before `exp()` to prevent `Inf → NaN` propagation. No numerical changes; verified byte-for-byte against the 1.5.3 baseline. Source on [GitHub](https://github.com/j-hai/ebal-stata).
 
 ---
 [Entropy Balancing for R](https://search.r-project.org/CRAN/refmans/ebal/html/ebalance.html) — also on [GitHub](https://github.com/j-hai/ebal)
@@ -178,12 +199,3 @@ The Stata routine was likewise updated to version 1.5.5 in April 2026 with bug f
 ---
 
 [Explainer for R and Stata](https://lost-stats.github.io/Model_Estimation/Matching/entropy_balancing.html)
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/entropy.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-</div>
-
