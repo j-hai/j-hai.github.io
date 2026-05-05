@@ -198,4 +198,4 @@ The Stata routine was also updated in April 2026 to version 1.5.5 with bug fixes
 
 ---
 
-[Explainer for R and Stata](https://lost-stats.github.io/Model_Estimation/Matching/entropy_balancing.html)
+[Explainer for R and Stata](/projects/Entropy-Balancing-—-an-Explainer/) — a self-contained tutorial on entropy balancing for users coming from either language, with worked examples in both `ebal` (R) and `ebalance` (Stata).
