@@ -12,8 +12,7 @@ from either R or Stata. The R commands use the `ebal` package; the
 Stata commands use the `ebalance` package. Both implement the same
 algorithm from {% cite hainmueller2012entropy %}.
 
-For the package landing pages and the most recent release notes, see
-the [Entropy Balancing project page](/projects/Entropy-Balancing/).
+← **[Back to the Entropy Balancing project page](/projects/Entropy-Balancing/)** for the package landing pages and the most recent release notes.
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> you have treated and comparison units,

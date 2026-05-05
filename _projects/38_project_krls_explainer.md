@@ -13,8 +13,7 @@ the `KRLS` package; the Stata commands use the `krls` command. Both
 implement the same algorithm from
 {% cite hainmueller2014kernel %} and {% cite ferwerda2017kernel %}.
 
-For the package landing pages and the most recent release notes, see
-the [Kernel ML Methods project page](/projects/Kernel-ML-Methods/).
+← **[Back to the Kernel ML Methods project page](/projects/Kernel-ML-Methods/)** for the package landing pages and the most recent release notes.
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> you need a flexible regression surface

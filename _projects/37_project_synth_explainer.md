@@ -14,8 +14,7 @@ implement the same algorithm from
 {% cite abadie2003economic %}, {% cite abadie2010synthetic %}, and
 {% cite abadie2011synth %}.
 
-For the package landing pages and the most recent release notes, see
-the [Synthetic Control Methods project page](/projects/Synthetic-Control-Methods/).
+← **[Back to the Synthetic Control Methods project page](/projects/Synthetic-Control-Methods/)** for the package landing pages and the most recent release notes.
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> one treated unit is exposed at a clear

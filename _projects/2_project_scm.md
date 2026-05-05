@@ -10,6 +10,8 @@ related_publications: true
 
 The synthetic control method enables researchers to estimate causal effects by constructing a synthetic version of a treatment unit through a weighted combination of control units. It is implemented as both an R package and a Stata routine, based on the methods developed in the following papers {% cite abadie2010synthetic %}, {% cite abadie2015comparative %}, and {% cite abadie2011synth %}. This work was awarded the Gosnell Prize for Excellence in Political Methodology.
 
+→ **[Read the explainer](/projects/Synthetic-Control-Methods-—-an-Explainer/)** — a self-contained tutorial on the synthetic control method for R and Stata users, with the canonical Proposition 99 example worked end-to-end.
+
 ## What's new in `Synth` 1.2-0 (May 2026)
 
 The R package was updated in May 2026 with a substantial set of user-facing additions:
@@ -85,4 +87,3 @@ The Stata routine was likewise updated in April 2026 to version 0.0.8 with **nat
 [Synth for Stata](https://ideas.repec.org/c/boc/bocode/s457334.html) — also on [GitHub](https://github.com/j-hai/synth-stata)
 
 ---
-[Explainer for R and Stata](/projects/Synthetic-Control-Methods-—-an-Explainer/) — a self-contained tutorial on the synthetic control method for users coming from either language, with the canonical Proposition 99 example worked end-to-end in both `Synth` (R) and `synth` (Stata).
