@@ -2,7 +2,7 @@
 layout: page
 title: Entropy Balancing — an Explainer
 description: How entropy balancing works, when to use it, and how to run it in R and Stata.
-img: assets/img/entropy.jpeg
+img: assets/img/entropy.jpg
 importance: 2
 category: methods
 ---
@@ -14,6 +14,15 @@ algorithm from {% cite hainmueller2012entropy %}.
 
 For the package landing pages and the most recent release notes, see
 the [Entropy Balancing project page](/projects/Entropy-Balancing/).
+
+<div class="alert alert-info" role="alert">
+<strong>Use this when:</strong> you have treated and comparison units,
+credible overlap on observed covariates, and want transparent
+reweighting for an ATT, ATC, or ATE estimand.<br>
+<strong>Do not use this when:</strong> the groups have no common
+support, the key confounding is unobserved, or the design needs a
+time-series counterfactual rather than covariate balance.
+</div>
 
 ## The problem entropy balancing solves
 
@@ -172,8 +181,10 @@ plot(fit, type = "weights")
 
 The vertical line at `weight = 1` is the uniform-weighting baseline;
 mass to the right is over-represented, mass to the left
-under-represented. Stata users can replicate the same diagnostics
-by computing summary statistics on the generated weight variable:
+under-represented. Individual weights are not the substantive result;
+they are diagnostics for overlap and influence. Stata users can
+replicate the same diagnostics by computing summary statistics on the
+generated weight variable:
 
 ```stata
 summarize w if treat == 0
@@ -185,6 +196,17 @@ summarize w_ratio if treat == 0   // largest weight as multiple of mean
 the weighting induces heteroskedasticity. Use
 `sandwich::vcovHC(..., "HC1")` in R, `regress [pw = w], robust` in
 Stata, or `svyglm()` if you are already in `survey` package land.
+
+## Minimum reporting checklist
+
+When reporting an entropy-balancing estimate, include at least:
+
+- the estimand (ATT, ATC, or ATE) and which group was reweighted;
+- the balance table before and after weighting;
+- effective sample size and max/mean weight ratio for the reweighted
+  side;
+- the outcome model and robust or design-appropriate standard errors;
+- any trimming, transformations, or moments beyond first moments.
 
 ## Choosing an estimand
 

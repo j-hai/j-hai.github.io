@@ -2,7 +2,7 @@
 layout: page
 title: Kernel Regularized Least Squares — an Explainer
 description: How KRLS works, when to use it, and how to run it in R and Stata.
-img: assets/img/kernel.jpeg
+img: assets/img/kernel.jpg
 importance: 2
 category: methods
 ---
@@ -15,6 +15,14 @@ implement the same algorithm from
 
 For the package landing pages and the most recent release notes, see
 the [Kernel ML Methods project page](/projects/Kernel-ML-Methods/).
+
+<div class="alert alert-info" role="alert">
+<strong>Use this when:</strong> you need a flexible regression surface
+but still want interpretable pointwise and average marginal effects.<br>
+<strong>Do not use this when:</strong> the dataset is very large, pure
+prediction is the goal, or the estimand requires extrapolation far
+outside the observed covariate space.
+</div>
 
 ## The problem KRLS solves
 
@@ -122,6 +130,18 @@ $$\sin'(x_1) = \cos(x_1)$$ over a symmetric range cancels — but the
 quartiles will show that the *pointwise* effect ranges from −1 to +1.
 That's exactly the heterogeneity you'd miss with OLS.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/krls_marginal_effects.png" title="KRLS pointwise marginal effects versus OLS" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    <strong>Pointwise marginal effects.</strong> KRLS returns one
+    derivative per observation. The average marginal effect summarizes
+    the distribution, while the OLS coefficient compresses all
+    heterogeneity into a single slope.
+</div>
+
 ### In Stata
 
 ```stata
@@ -167,6 +187,17 @@ fit$sigma       # kernel bandwidth (default p; set sigma= for sensitivity)
 If $$R^2$$ is very high but the LOO loss is also high, you may be
 overfitting — try a larger $$\lambda$$ via `lambdasearch()` or
 constrain the kernel bandwidth.
+
+## Minimum reporting checklist
+
+When reporting a KRLS fit, include at least:
+
+- average marginal effects with analytical standard errors;
+- quartiles or a plot of the pointwise marginal effects;
+- in-sample $$R^2$$ and leave-one-out loss;
+- the selected regularization parameter and kernel bandwidth;
+- sensitivity checks for bandwidth or predictor scaling when results
+  hinge on heterogeneity.
 
 ## Choosing among alternatives
 

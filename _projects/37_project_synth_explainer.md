@@ -17,6 +17,15 @@ implement the same algorithm from
 For the package landing pages and the most recent release notes, see
 the [Synthetic Control Methods project page](/projects/Synthetic-Control-Methods/).
 
+<div class="alert alert-info" role="alert">
+<strong>Use this when:</strong> one treated unit is exposed at a clear
+date, you have a credible donor pool, and the pre-treatment outcome
+history is long enough to assess fit.<br>
+<strong>Do not use this when:</strong> pre-period fit is poor, many
+units adopt treatment at different times, or the donor pool is itself
+contaminated by similar interventions.
+</div>
+
 ## The problem synthetic controls solve
 
 Suppose a single unit — a state, a country, a firm, a school — was
@@ -191,6 +200,17 @@ distributional assumptions are:
 inf <- synth_inference(fit, dp, method = "conformal")
 plot(inf)                     # treated, synthetic, and band
 ```
+
+## Minimum reporting checklist
+
+When reporting a synthetic-control estimate, include at least:
+
+- the treated unit, treatment date, donor pool, and excluded donors;
+- the predictors and pre-treatment windows used to choose weights;
+- pre-treatment fit (RMSPE or MSPE) and a path/gap plot;
+- donor weights, especially any dominant donor;
+- placebo/MSPE-ratio or interval-based inference for the post-period
+  gap.
 
 ## Choosing among synthetic-control variants
 

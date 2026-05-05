@@ -2,7 +2,7 @@
 layout: page
 title: Entropy Balancing
 description: 
-img: assets/img/entropy.jpeg
+img: assets/img/entropy.jpg
 importance: 1
 category: methods
 related_publications: true

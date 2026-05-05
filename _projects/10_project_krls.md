@@ -2,7 +2,7 @@
 layout: page
 title: Kernel ML Methods
 description: 
-img: assets/img/kernel.jpeg
+img: assets/img/kernel.jpg
 importance: 1
 category: methods
 related_publications: true
@@ -26,9 +26,8 @@ The Stata routine was likewise updated to version 1.03 in April 2026 — bug fix
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/kernel.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/kernel.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
  </div>
-
