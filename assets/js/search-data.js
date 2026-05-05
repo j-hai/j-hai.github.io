@@ -195,6 +195,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/35_project_ispnetwork/";
+            },},{id: "projects-entropy-balancing-an-explainer",
+          title: 'Entropy Balancing — an Explainer',
+          description: "How entropy balancing works, when to use it, and how to run it in R and Stata.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/36_project_ebal_explainer/";
             },},{id: "projects-immigration-policy-lab-ipl",
           title: 'Immigration Policy Lab (IPL)',
           description: "",
