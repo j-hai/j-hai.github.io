@@ -12,7 +12,7 @@ Entropy Balancing is a statistical method implemented as both an R package and a
 
 The method is based on the approaches developed in {% cite hainmueller2012entropy %} and {% cite hainmueller2013ebalance %}, and it won the Warren Miller Award from the Society of Political Methodology in 2020.
 
-→ **[Read the explainer](/projects/Entropy-Balancing-—-an-Explainer/)** — a self-contained tutorial on entropy balancing for R and Stata users.
+→ **[Read the explainer](/projects/entropy-balancing-explainer/)** — a self-contained tutorial on entropy balancing for R and Stata users.
 
 ## The four-line workflow
 
@@ -199,4 +199,3 @@ The Stata routine was also updated in April 2026 to version 1.5.5 with bug fixes
 [Entropy Balancing for Stata](https://www.jstatsoft.org/article/view/v054i07) — also on [GitHub](https://github.com/j-hai/ebal-stata)
 
 ---
-

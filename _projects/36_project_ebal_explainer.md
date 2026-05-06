@@ -3,6 +3,7 @@ layout: page
 title: Entropy Balancing — an Explainer
 description: How entropy balancing works, when to use it, and how to run it in R and Stata.
 img: assets/img/entropy.jpg
+permalink: /projects/entropy-balancing-explainer/
 importance: 2
 category: methods
 ---

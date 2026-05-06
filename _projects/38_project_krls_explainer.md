@@ -3,6 +3,7 @@ layout: page
 title: Kernel Regularized Least Squares — an Explainer
 description: How KRLS works, when to use it, and how to run it in R and Stata.
 img: assets/img/kernel.jpg
+permalink: /projects/kernel-regularized-least-squares-explainer/
 importance: 2
 category: methods
 ---
