@@ -19,7 +19,7 @@ The software is based on the methods developed in {% cite hainmueller2019trust %
 
 ---
 
-[Interflex for Stata](https://yiqingxu.org/packages/interflex/StataGuide.pdf)
+[Interflex for Stata](https://yiqingxu.org/packages/interflex/)
 
 ---
 
