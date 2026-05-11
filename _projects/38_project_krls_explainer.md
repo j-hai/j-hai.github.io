@@ -104,11 +104,14 @@ library(KRLS)
 
 set.seed(1)
 n <- 200
-# x1 spans a full sine period so the average derivative is zero by
-# symmetry; the heterogeneity in pointwise derivatives is the story.
-x1 <- runif(n, -pi, pi); x2 <- runif(n, -pi, pi)
-# True surface: nonlinear in x1, modulated by x2
-y  <- sin(x1) + 0.5 * x2 * (x1 > 0) + rnorm(n, sd = 0.3)
+# x1 on an evenly spaced grid over a full sine period so the
+# *empirical* average of cos(x1) is essentially zero by construction
+# -- the average derivative inherits the symmetry, and the
+# heterogeneity in pointwise derivatives is the story.
+x1 <- seq(-pi, pi, length.out = n)
+x2 <- runif(n, -pi, pi)
+# Smooth, additive true surface
+y  <- sin(x1) + 0.5 * x2 + rnorm(n, sd = 0.3)
 X  <- cbind(x1, x2)
 
 # Fit
@@ -135,11 +138,12 @@ For each predictor, `summary(fit)` reports:
 In this example the AME of `x1` is near zero — the derivative
 $$\sin'(x_1) = \cos(x_1)$$ integrates to zero over a full sine
 period, since $$\int_{-\pi}^{\pi}\cos(t)\,dt = \sin(\pi) - \sin(-\pi)
-= 0$$. But the *pointwise* effects span the full range of
-$$\cos$$, roughly from $$-1$$ to $$+1$$ across the observed values
-of $$x_1$$. That distribution of marginal effects is exactly the
-heterogeneity an OLS coefficient would compress into a single
-near-zero slope.
+= 0$$. But the *pointwise* effects span the full range of $$\cos$$,
+from $$-1$$ to $$+1$$ across the observed values of $$x_1$$. The
+AME of `x2` recovers the true slope of $$0.5$$. The distribution
+of $$x_1$$'s marginal effects is exactly the heterogeneity an OLS
+coefficient on $$x_1$$ would compress into a single near-zero
+slope, while OLS on $$x_2$$ would recover the same constant.
 
 For samples where the $$n \times n$$ kernel matrix is uncomfortable —
 roughly past $$n \approx 5{,}000$$ on a typical laptop — swap in the
@@ -181,7 +185,9 @@ krls y x1 x2, deriv
 krls y x1 x2, graph
 
 * Fitted values, residuals, and SEs go through kpredict.
-kpredict yhat,   fitted
+* (Fitted values are the default; pass `se` or `residuals` for
+* the other variants.)
+kpredict yhat
 kpredict yhat_se, se
 ```
 
