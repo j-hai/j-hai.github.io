@@ -51,9 +51,10 @@ options each have their own failure modes:
    so you can see how the partial derivative
    $$\partial \hat E[Y \mid X] / \partial X_j$$ varies across the
    covariate space.
-3. Reports **closed-form analytical standard errors** for those
-   marginal effects, which the package summarizes as
-   pointwise CIs and "average marginal effects" (AMEs).
+3. Reports **closed-form analytical standard errors** for the
+   *average* marginal effects, together with the full distribution of
+   pointwise derivatives so heterogeneity is visible alongside the
+   summary statistic.
 
 In short: a flexible regression that still tells you a coefficient.
 
@@ -65,8 +66,12 @@ Gaussian kernels — one centered on each observation:
 $$
 \hat f(x) \;=\; \sum_{i=1}^n c_i \,K(x, x_i)
 \qquad
-K(x, x_i) \;=\; \exp\!\left(-\frac{\|x - x_i\|^2}{\sigma^2}\right)
+K(x, x_i) \;=\; \exp\!\left(-\frac{\|x - x_i\|^2}{\sigma}\right)
 $$
+
+The `sigma` argument to `krls()` is the kernel denominator directly
+(not its square), and the default is $$\sigma = p$$ where $$p$$ is the
+number of predictors.
 
 The coefficients $$c$$ minimize a Tikhonov-regularized least-squares
 objective,
@@ -99,7 +104,9 @@ library(KRLS)
 
 set.seed(1)
 n <- 200
-x1 <- runif(n, -2, 2); x2 <- runif(n, -2, 2)
+# x1 spans a full sine period so the average derivative is zero by
+# symmetry; the heterogeneity in pointwise derivatives is the story.
+x1 <- runif(n, -pi, pi); x2 <- runif(n, -pi, pi)
 # True surface: nonlinear in x1, modulated by x2
 y  <- sin(x1) + 0.5 * x2 * (x1 > 0) + rnorm(n, sd = 0.3)
 X  <- cbind(x1, x2)
@@ -125,10 +132,14 @@ For each predictor, `summary(fit)` reports:
   the effect is constant (boring) or varies across the covariate
   space (interesting).
 
-In this example the AME of `x1` will be near zero — averaging
-$$\sin'(x_1) = \cos(x_1)$$ over a symmetric range cancels — but the
-quartiles will show that the *pointwise* effect ranges from −1 to +1.
-That's exactly the heterogeneity you'd miss with OLS.
+In this example the AME of `x1` is near zero — the derivative
+$$\sin'(x_1) = \cos(x_1)$$ integrates to zero over a full sine
+period, since $$\int_{-\pi}^{\pi}\cos(t)\,dt = \sin(\pi) - \sin(-\pi)
+= 0$$. But the *pointwise* effects span the full range of
+$$\cos$$, roughly from $$-1$$ to $$+1$$ across the observed values
+of $$x_1$$. That distribution of marginal effects is exactly the
+heterogeneity an OLS coefficient would compress into a single
+near-zero slope.
 
 For samples where the $$n \times n$$ kernel matrix is uncomfortable —
 roughly past $$n \approx 5{,}000$$ on a typical laptop — swap in the
@@ -162,13 +173,16 @@ KRLS inference, see the note in Common pitfalls below.
 ```stata
 use mydata.dta, clear
 
-krls y x1 x2
+* Fit with pointwise derivatives saved as d_x1, d_x2 in the
+* current dataset (use `sderiv(name)` to save to a separate file).
+krls y x1 x2, deriv
 
-// Pointwise marginal effects are stored automatically; access via
-matrix list e(derivatives)
+* Histograms of the pointwise derivatives.
+krls y x1 x2, graph
 
-// Plot heterogeneity in the marginal effect of x1
-krls_plot x1
+* Fitted values, residuals, and SEs go through kpredict.
+kpredict yhat,   fitted
+kpredict yhat_se, se
 ```
 
 The Stata command shares the same algorithm and output structure as
@@ -193,10 +207,11 @@ heterogeneity. `plot(fit)` shows the distribution.
 **3. Pre/post-fit diagnostics.**
 
 ```r
-fit$R2          # in-sample R²
-fit$Looloss     # leave-one-out CV loss at the chosen lambda
-fit$lambda      # regularization parameter (chosen via LOOCV)
-fit$sigma       # kernel bandwidth (default p; set sigma= for sensitivity)
+fit$R2             # in-sample R²
+fit$Looe           # leave-one-out CV loss at the chosen lambda
+fit$lambda         # regularization parameter (chosen via LOOCV by default)
+fit$lambda_method  # "loo" or "gcv" -- which objective was minimized
+fit$sigma          # kernel bandwidth (default p; set sigma= for sensitivity)
 ```
 
 If $$R^2$$ is very high but the LOO loss is also high, you may be
@@ -253,11 +268,12 @@ what you need:
   `vignette("krls-nystrom-scaling")` for the timing comparison, the
   landmark-reuse pattern, and the choice between LOO and GCV for
   $$\lambda$$.
-- **Bandwidth choice.** The default is $$\sigma^2 = p$$ where $$p$$
-  is the number of predictors. This works well in many cases but is
-  worth checking. Smaller $$\sigma$$ makes the kernel sharper
-  (higher variance, lower bias); larger $$\sigma$$ smooths more.
-  Refit with `sigma = ...` and compare $$R^2$$ + LOO loss.
+- **Bandwidth choice.** The default is $$\sigma = p$$ where $$p$$
+  is the number of predictors (the kernel denominator, not its
+  square). This works well in many cases but is worth checking.
+  Smaller $$\sigma$$ makes the kernel sharper (higher variance,
+  lower bias); larger $$\sigma$$ smooths more. Refit with
+  `sigma = ...` and compare $$R^2$$ + LOO loss.
 - **Standardization matters.** Gaussian kernels are scale-sensitive.
   Standardize predictors before fitting, or pass them as a matrix
   with comparable scales. The package does this internally by
