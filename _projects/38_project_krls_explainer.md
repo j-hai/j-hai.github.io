@@ -130,6 +130,21 @@ $$\sin'(x_1) = \cos(x_1)$$ over a symmetric range cancels — but the
 quartiles will show that the *pointwise* effect ranges from −1 to +1.
 That's exactly the heterogeneity you'd miss with OLS.
 
+For samples where the $$n \times n$$ kernel matrix is uncomfortable —
+roughly past $$n \approx 5{,}000$$ on a typical laptop — swap in the
+Nyström approximation:
+
+```r
+fit_big <- krls(X = X, y = y, approx = "nystrom")
+```
+
+The interface, fit object, and outputs are the same. Default
+landmark count is `min(500, ceiling(sqrt(n)))`; pass `nystrom_m`,
+`landmarks`, or `landmark_method` to override. Predictions, average
+marginal effects, and their standard errors are all computed from
+the same fit. For applications that hinge on the historical exact
+KRLS inference, see the note in Common pitfalls below.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/krls_marginal_effects.png" title="KRLS pointwise marginal effects versus OLS" class="img-fluid rounded z-depth-1" %}
@@ -220,14 +235,24 @@ what you need:
 
 ## Common pitfalls
 
-- **n³ memory and runtime.** KRLS solves an $$n \times n$$ linear
-  system. For $$n > \sim 5{,}000$$, the cost becomes prohibitive on
-  a single machine. The `bigKRLS` package (now archived on CRAN)
-  ported the heavy lifting to C++ via Rcpp/RcppArmadillo for a
-  ~5–10× constant-factor speedup, but the asymptotic
-  $$\mathcal O(n^3)$$ scaling is unchanged. For genuinely large
-  problems, consider Nyström approximation or random Fourier
-  features (not currently in `KRLS` itself).
+- **n³ memory and runtime for the exact path.** By default KRLS solves
+  an $$n \times n$$ linear system. For $$n > \sim 5{,}000$$, the cost
+  becomes prohibitive on a single machine. Since version 1.4-0 the
+  package offers an explicit low-rank alternative —
+  `krls(..., approx = "nystrom")` — that anchors the model on
+  $$m \ll n$$ landmark points and solves the ridge problem in
+  $$m$$-dimensional space, with time $$\mathcal O(n m^2 + m^3)$$ and
+  memory $$\mathcal O(n m)$$. The Nyström path is the right default
+  for most applied work at moderate-to-large $$n$$: predictions,
+  average marginal effects, and analytical standard errors are all
+  available and the calibration matches a parametric bootstrap.
+  Strictly speaking these are *conditional* SEs — they condition on
+  the selected landmarks, the chosen $$\lambda$$, and the feature
+  map — so use the exact path when a paper explicitly hinges on
+  the historical KRLS inference. See
+  `vignette("krls-nystrom-scaling")` for the timing comparison, the
+  landmark-reuse pattern, and the choice between LOO and GCV for
+  $$\lambda$$.
 - **Bandwidth choice.** The default is $$\sigma^2 = p$$ where $$p$$
   is the number of predictors. This works well in many cases but is
   worth checking. Smaller $$\sigma$$ makes the kernel sharper
@@ -247,9 +272,12 @@ what you need:
 
 ## When *not* to use KRLS
 
-- **Very large $$n$$.** $$n > \sim 5{,}000$$ on a typical machine
-  becomes painful. Use a different method (or wait for the next
-  generation of `KRLS` with Nyström approximation, planned).
+- **You need exact KRLS inference at very large $$n$$.** The Nyström
+  path (`approx = "nystrom"`) handles large samples well for nearly
+  every applied use case. The exception is when the analysis
+  explicitly relies on the *exact* analytical inference from
+  Hainmueller and Hazlett (2014); for that, the $$n \approx 5{,}000$$
+  ceiling on the exact path still applies.
 - **You only care about prediction.** If you don't need pointwise
   marginal effects, gradient boosting will be faster and often more
   accurate.
@@ -274,7 +302,8 @@ what you need:
   package landing page with the latest release notes.
 - The companion Stata package: `krls` (see
   [https://github.com/j-hai/krls-stata](https://github.com/j-hai/krls-stata)).
-- For very large problems, the (archived) `bigKRLS` package on the
-  CRAN archive offers an Rcpp/RcppArmadillo port; modern
-  alternatives include Nyström approximation in custom code or
-  random Fourier features.
+- `vignette("krls-nystrom-scaling", package = "KRLS")` — how the
+  built-in Nyström approximation scales beyond the $$\sim 5{,}000$$
+  ceiling, including the landmark-reuse pattern via
+  `get_landmarks()` and the LOO-vs-GCV trade-off for the
+  regularization parameter.
