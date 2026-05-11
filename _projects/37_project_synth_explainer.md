@@ -273,9 +273,10 @@ Synthetic controls are not magic. They struggle when:
   the treated unit before treatment, post-period gaps are
   uninterpretable. Augmented or generalized SC is more honest about
   this case.
-- **You have many treated units.** Vanilla SCM is built for a single
-  treated unit. With many treated units, generalized synthetic
-  control or synthetic DID is the right tool.
+- **You have many treated units.** Vanilla `Synth` is the single-unit
+  baseline. With many treated units, use the same SCM logic through a
+  design built for grouped or staggered adoption, such as generalized
+  synthetic control or synthetic DID.
 
 ## References
 
