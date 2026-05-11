@@ -97,6 +97,7 @@ the tax?** The donor pool is the 38 other US states.
 
 ```r
 library(Synth)
+library(ggplot2)   # for the autoplot() S3 methods Synth registers
 data(smoking)   # 39 states × 31 years (1970-2000) of cigarette sales
 
 # 1. Build the inputs (one-line ergonomic wrapper from Synth 1.2-0)
@@ -128,9 +129,10 @@ autoplot(inf)                          # 90% conformal band
 autoplot(pl, mspe_threshold = 5)       # placebo gaps
 ```
 
-The synthetic California puts about 84% of weight on Utah, Nevada,
-Montana, and Connecticut (matching the published `Synth` paper). The
-post / pre MSPE ratio is **128** and the placebo p-value is **0.026**:
+The synthetic California puts about 90% of weight on Utah (34%),
+Nevada (25%), Montana (20%), and Connecticut (11%) — close to the
+mix in the published `Synth` paper. The post / pre MSPE ratio is
+**128** and the placebo p-value is **0.026**:
 California's post-1988 cigarette consumption falls dramatically below
 its synthetic counterpart, and that gap is unusually large relative
 to other states.
@@ -139,7 +141,7 @@ to other states.
 
 ```stata
 use smoking.dta, clear
-xtset state_id year
+tsset state year
 
 synth cigsale beer(1984(1)1988) lnincome(1972(1)1988)        ///
               retprice age15to24 cigsale(1988) cigsale(1980)  ///
