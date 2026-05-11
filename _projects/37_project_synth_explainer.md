@@ -20,9 +20,10 @@ implement the same algorithm from Abadie and Gardeazabal (2003),
 <strong>Use this when:</strong> one treated unit is exposed at a clear
 date, you have a credible donor pool, and the pre-treatment outcome
 history is long enough to assess fit.<br>
-<strong>Do not use this when:</strong> pre-period fit is poor, many
-units adopt treatment at different times, or the donor pool is itself
-contaminated by similar interventions.
+<strong>Watch out for:</strong> poor pre-period fit, staggered or
+multiple adoption, and donors exposed to related interventions. These
+cases usually call for augmented / generalized SCM, synthetic DID, or a
+narrower donor pool rather than abandoning the design.
 </div>
 
 ## The problem synthetic controls solve
