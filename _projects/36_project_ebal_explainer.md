@@ -13,15 +13,17 @@ from either R or Stata. The R commands use the `ebal` package; the
 Stata commands use the `ebalance` package. Both implement the same
 algorithm from {% cite hainmueller2012entropy %}.
 
-← **[Back to the Entropy Balancing project page](/projects/Entropy-Balancing/)** for the package landing pages and the most recent release notes.
+← **[Back to the Entropy Balancing project page](/projects/4_project_ebal/)** for the package landing pages and the most recent release notes.
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> you have treated and comparison units,
 credible overlap on observed covariates, and want transparent
 reweighting for an ATT, ATC, or ATE estimand.<br>
-<strong>Do not use this when:</strong> the groups have no common
-support, the key confounding is unobserved, or the design needs a
-time-series counterfactual rather than covariate balance.
+<strong>Watch out for:</strong> limited common support and important
+unobserved confounding. Entropy balancing can also be useful inside
+DID or panel designs when the goal is to balance pre-treatment
+covariates and trends; for a stand-alone time-series counterfactual,
+use synthetic control instead.
 </div>
 
 ## The problem entropy balancing solves
@@ -42,8 +44,9 @@ Two common approaches and their failure modes:
   diagnostics, tweaking the propensity-score specification, and
   hoping.
 - **Matching** picks neighbors. It can balance the distribution well,
-  but you discard data, ties matter, and the balance you get depends
-  on a metric you chose.
+  but much of the comparison data often gets zero weight, selected
+  matches usually get coarse unit weights, ties matter, and the balance
+  you get depends on a metric you chose.
 
 **Entropy balancing skips the propensity-score step entirely.** It
 finds the weights that exactly satisfy the moment conditions you ask
@@ -316,7 +319,7 @@ not as a one-step fix.
 
 ## See also
 
-- [Entropy Balancing project page](/projects/Entropy-Balancing/) —
+- [Entropy Balancing project page](/projects/4_project_ebal/) —
   package landing page with the latest release notes and worked
   examples for ATT/ATE/ATC and DID.
 - `vignette("ebal-quickstart", package = "ebal")` — five-minute intro.

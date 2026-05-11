@@ -14,14 +14,15 @@ the `KRLS` package; the Stata commands use the `krls` command. Both
 implement the same algorithm from
 {% cite hainmueller2014kernel %} and {% cite ferwerda2017kernel %}.
 
-← **[Back to the Kernel ML Methods project page](/projects/Kernel-ML-Methods/)** for the package landing pages and the most recent release notes.
+← **[Back to the Kernel ML Methods project page](/projects/10_project_krls/)** for the package landing pages and the most recent release notes.
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> you need a flexible regression surface
 but still want interpretable pointwise and average marginal effects.<br>
-<strong>Do not use this when:</strong> the dataset is very large, pure
-prediction is the goal, or the estimand requires extrapolation far
-outside the observed covariate space.
+<strong>Watch out for:</strong> estimands that require extrapolation far
+outside the observed covariate space. Exact KRLS can also be costly on
+very large datasets, but the Nyström approximation makes larger,
+prediction-oriented workflows feasible.
 </div>
 
 ## The problem KRLS solves
@@ -320,7 +321,7 @@ what you need:
 
 ## See also
 
-- [Kernel ML Methods project page](/projects/Kernel-ML-Methods/) —
+- [Kernel ML Methods project page](/projects/10_project_krls/) —
   package landing page with the latest release notes.
 - The companion Stata package: `krls` (see
   [https://github.com/j-hai/krls-stata](https://github.com/j-hai/krls-stata)).

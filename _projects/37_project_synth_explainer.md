@@ -11,11 +11,10 @@ category: methods
 This is a self-contained tutorial on the synthetic control method
 (SCM) for users coming from either R or Stata. The R commands use the
 `Synth` package; the Stata commands use the `synth` command. Both
-implement the same algorithm from
-{% cite abadie2003economic %}, {% cite abadie2010synthetic %}, and
-{% cite abadie2011synth %}.
+implement the same algorithm from Abadie and Gardeazabal (2003),
+{% cite abadie2010synthetic %}, and {% cite abadie2011synth %}.
 
-← **[Back to the Synthetic Control Methods project page](/projects/Synthetic-Control-Methods/)** for the package landing pages and the most recent release notes.
+← **[Back to the Synthetic Control Methods project page](/projects/2_project_scm/)** for the package landing pages and the most recent release notes.
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> one treated unit is exposed at a clear
@@ -296,7 +295,7 @@ Synthetic controls are not magic. They struggle when:
 
 ## See also
 
-- [Synthetic Control Methods project page](/projects/Synthetic-Control-Methods/)
+- [Synthetic Control Methods project page](/projects/2_project_scm/)
   — package landing page with the latest release notes and the
   Proposition 99 worked example.
 - `vignette("synth-quickstart", package = "Synth")` — five-minute intro.
