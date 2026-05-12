@@ -14,6 +14,7 @@ Stata commands use the `ebalance` package. Both implement the same
 algorithm from {% cite hainmueller2012entropy %}.
 
 ← **[Back to the Entropy Balancing project page](/projects/4_project_ebal/)** for the package landing pages and the most recent release notes.
+**Source:** [j-hai/ebal](https://github.com/j-hai/ebal) (R) · [j-hai/ebal-stata](https://github.com/j-hai/ebal-stata) (Stata).
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> you have treated and comparison units,

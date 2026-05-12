@@ -12,6 +12,8 @@ The synthetic control method enables researchers to estimate causal effects by c
 
 → **[Read the explainer](/projects/synthetic-control-methods-explainer/)** — a self-contained tutorial on the synthetic control method for R and Stata users, with the canonical Proposition 99 example worked end-to-end.
 
+**Source on GitHub:** [j-hai/Synth](https://github.com/j-hai/Synth) (R package) · [j-hai/synth-stata](https://github.com/j-hai/synth-stata) (Stata routine).
+
 ## What's new in `Synth` 1.2-0 (May 2026)
 
 The R package was updated in May 2026 with a substantial set of user-facing additions:

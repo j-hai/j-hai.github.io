@@ -14,6 +14,8 @@ The method is based on the approaches developed in {% cite hainmueller2012entrop
 
 → **[Read the explainer](/projects/entropy-balancing-explainer/)** — a self-contained tutorial on entropy balancing for R and Stata users.
 
+**Source on GitHub:** [j-hai/ebal](https://github.com/j-hai/ebal) (R package) · [j-hai/ebal-stata](https://github.com/j-hai/ebal-stata) (Stata routine).
+
 ## The four-line workflow
 
 ```r

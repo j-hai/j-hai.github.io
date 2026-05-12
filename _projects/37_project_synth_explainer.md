@@ -15,6 +15,7 @@ implement the same algorithm from Abadie and Gardeazabal (2003),
 {% cite abadie2010synthetic %}, and {% cite abadie2011synth %}.
 
 ← **[Back to the Synthetic Control Methods project page](/projects/2_project_scm/)** for the package landing pages and the most recent release notes.
+**Source:** [j-hai/Synth](https://github.com/j-hai/Synth) (R) · [j-hai/synth-stata](https://github.com/j-hai/synth-stata) (Stata).
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> one treated unit is exposed at a clear

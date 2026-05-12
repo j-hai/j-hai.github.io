@@ -16,6 +16,8 @@ We argue that KRLS is particularly well-suited for social science applications b
 
 → **[Read the explainer](/projects/kernel-regularized-least-squares-explainer/)** — a self-contained tutorial on what KRLS gives you that OLS doesn't, with worked examples in both R and Stata.
 
+**Source on GitHub:** [j-hai/KRLS](https://github.com/j-hai/KRLS) (R package) · [j-hai/krls-stata](https://github.com/j-hai/krls-stata) (Stata routine).
+
 The R package has seen substantial development in May 2026, building toward
 the next CRAN release. The headline change is **scalability**: KRLS now offers
 an explicit Nyström approximation that pushes the practical ceiling from

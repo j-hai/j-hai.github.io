@@ -15,6 +15,7 @@ implement the same algorithm from
 {% cite hainmueller2014kernel %} and {% cite ferwerda2017kernel %}.
 
 ← **[Back to the Kernel ML Methods project page](/projects/10_project_krls/)** for the package landing pages and the most recent release notes.
+**Source:** [j-hai/KRLS](https://github.com/j-hai/KRLS) (R) · [j-hai/krls-stata](https://github.com/j-hai/krls-stata) (Stata).
 
 <div class="alert alert-info" role="alert">
 <strong>Use this when:</strong> you need a flexible regression surface
