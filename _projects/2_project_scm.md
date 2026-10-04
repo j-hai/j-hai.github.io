@@ -16,22 +16,23 @@ The synthetic control method enables researchers to estimate causal effects by c
 
 ## What's new in `Synth` 1.2-0 (May 2026)
 
-The R package was updated in May 2026 with a substantial set of user-facing additions:
+Version 1.2-0 is the development version on GitHub; install it with `remotes::install_github("j-hai/Synth")` (CRAN currently has 1.1-10). It adds a substantial set of user-facing features:
 
-* **Built-in inference.** `synth_inference()` returns split-conformal (Chernozhukov–Wuthrich–Zhu 2021) or parametric prediction intervals around the synthetic counterfactual. `generate_placebos()` plus `mspe_test()` give the canonical Abadie–Diamond–Hainmueller (2010) placebo p-value in one call.
+* **Built-in inference.** `synth_inference()` returns split-conformal (Chernozhukov–Wuthrich–Zhu 2021) or parametric prediction intervals around the synthetic counterfactual. `synth_placebos()` plus `synth_mspe_test()` give the canonical Abadie–Diamond–Hainmueller (2010) placebo p-value in two calls.
 * **Ergonomic data prep.** `synth_data()` is a one-line wrapper around `dataprep()` for the common case (panel + treated unit + treatment date + auto-controls).
-* **Alternative QP backends.** Optional `quadopt = "cvxr"` (CVXR + ECOS) and `quadopt = "torch"` (Frank-Wolfe simplex LS via the `torch` package, with CPU/CUDA/MPS support). Both live in `Suggests:` — no required dependency.
+* **Alternative QP backends.** Optional `quadopt = "cvxr"` (CVXR + CLARABEL) and `quadopt = "torch"` (Frank-Wolfe simplex LS via the `torch` package, with CPU/CUDA/MPS support). Both live in `Suggests:` — no required dependency.
 * **`ggplot2` support.** `autoplot()` methods on the inference and placebo objects produce publication-quality figures.
 * **Cross-platform parallel placebos.** `parallel = TRUE` does the right thing on Windows (PSOCK cluster) and unix-likes (forks).
-* **Two vignettes.** `vignette("synth-quickstart")` for a 5-minute intro and `vignette("inference")` for a deep dive on the canonical Basque example.
+* **Two vignettes.** `vignette("synth-quickstart")` for a 5-minute intro and `vignette("inference")` for the inference deep dive on the Proposition 99 example. A GitHub install includes them only with `remotes::install_github("j-hai/Synth", build_vignettes = TRUE)`, which needs `knitr`, `rmarkdown`, and pandoc.
+* **Fixes and renames (October 2026).** `dataprep()` labels now follow the data when controls or periods are given out of order, `predictors.op` is applied to control units as well as the treated unit (results change only for operators other than `"mean"`), and invalid operators stop with a clear message. The placebo functions are now `synth_placebos()`, `synth_mspe_test()`, and `synth_mspe_plot()`, with a `plot()` method; the old names (`generate_placebos()` etc.) clashed with `SCtools`.
 
 ### Worked example: California's Proposition 99
 
-The 1988 California cigarette-tax measure is a textbook case for the synthetic control method. With the new API the entire workflow is six function calls:
+The 1988 California cigarette-tax measure is a textbook case for the synthetic control method. With the new API the entire workflow is seven function calls:
 
 ```r
-library(Synth); library(haven); library(ggplot2)
-data(smoking)  # or read_dta("smoking.dta")
+library(Synth); library(ggplot2)
+data(smoking)
 
 dp <- synth_data(
   panel              = smoking,
@@ -50,14 +51,14 @@ dp <- synth_data(
 
 fit  <- synth(dp)
 inf  <- synth_inference(fit, dp, method = "conformal", alpha = 0.10)
-pl   <- generate_placebos(fit, dp)
-test <- mspe_test(pl)        # one-sided p-value = 0.026
+pl   <- synth_placebos(fit, dp)
+test <- synth_mspe_test(pl)  # one-sided p-value = 0.026
 
 autoplot(inf)                # 90% conformal band
 autoplot(pl, mspe_threshold = 5)  # placebo overlay
 ```
 
-The synthetic California puts about 84% of weight on Utah, Nevada, Montana, and Connecticut (matching the published `Synth` paper). Post / pre MSPE ratio is 128 and the placebo p-value is 0.026 — the effect is unusually large relative to other states.
+The synthetic California puts about 90% of weight on Utah, Nevada, Montana, and Connecticut (close to the mix in the published Proposition 99 paper). Post / pre MSPE ratio is 128 and the placebo p-value is 0.026 — the effect is unusually large relative to other states.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -74,10 +75,10 @@ The synthetic California puts about 84% of weight on Utah, Nevada, Montana, and 
     </div>
 </div>
 <div class="caption">
-    Placebo gap plot from <code>generate_placebos()</code>: California (black) versus 38 placebo states (grey, restricted to those with pre-MSPE no more than five times California's). The treated unit's post-period gap dominates the placebo distribution.
+    Placebo gap plot from <code>synth_placebos()</code>: California (black) versus the 27 of 38 placebo states (grey) with pre-MSPE no more than five times California's. The treated unit's post-period gap dominates the placebo distribution.
 </div>
 
-The previous release (1.1-10, April 2026) addressed `quadopt = "LowRankQP"` fail-fast, the missing-data check in `dataprep()`, quieter defaults, and a `path.plot()` y-axis fix for negative-valued series.
+The current CRAN release (1.1-10, April 2026) addressed `quadopt = "LowRankQP"` fail-fast, the missing-data check in `dataprep()`, quieter defaults, and a `path.plot()` y-axis fix for negative-valued series.
 
 The Stata routine was likewise updated in April 2026 to version 0.0.8 with **native Apple Silicon support** (the optimizer plugin now ships an arm64 Mach-O slice; previously it failed to load on M-series Macs running Stata 17+ natively), portable C source that compiles cleanly on macOS / Linux / Windows, and typo / version-declaration cleanup.
 
