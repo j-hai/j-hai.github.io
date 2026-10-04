@@ -97,6 +97,8 @@ the tax?** The donor pool is the 38 other US states.
 ### In R
 
 ```r
+# Needs Synth 1.2-0, the development version on GitHub:
+# remotes::install_github("j-hai/Synth")
 library(Synth)
 library(ggplot2)   # for the autoplot() S3 methods Synth registers
 data(smoking)   # 39 states × 31 years (1970-2000) of cigarette sales
@@ -122,8 +124,8 @@ fit <- synth(dp)
 
 # 3. Inference
 inf  <- synth_inference(fit, dp, method = "conformal", alpha = 0.10)
-pl   <- generate_placebos(fit, dp)
-test <- mspe_test(pl)        # one-sided p-value = 0.026
+pl   <- synth_placebos(fit, dp)
+test <- synth_mspe_test(pl)  # one-sided p-value = 0.026
 
 # 4. Plots
 autoplot(inf)                          # 90% conformal band
@@ -132,7 +134,7 @@ autoplot(pl, mspe_threshold = 5)       # placebo gaps
 
 The synthetic California puts about 90% of weight on Utah (34%),
 Nevada (25%), Montana (20%), and Connecticut (11%) — close to the
-mix in the published `Synth` paper. The post / pre MSPE ratio is
+mix in the published Proposition 99 paper. The post / pre MSPE ratio is
 **128** and the placebo p-value is **0.026**:
 California's post-1988 cigarette consumption falls dramatically below
 its synthetic counterpart, and that gap is unusually large relative
@@ -152,7 +154,7 @@ synth cigsale beer(1984(1)1988) lnincome(1972(1)1988)        ///
 
 `trunit(3)` selects California; `trperiod(1989)` is the first
 post-treatment year; `xperiod(...)` is the predictor-averaging
-window. The `fig` option draws the path-and-gap plot.
+window. The `fig` option draws the treated vs. synthetic path plot.
 
 For inference in Stata, `synth_runner` (a community-maintained
 wrapper) is the standard way to run placebos and MSPE tests; the
@@ -175,7 +177,7 @@ gaps.plot(fit, dp)        # the difference (synthetic counterfactual error)
 **2. Donor weights.** Look at which donors are doing the work.
 
 ```r
-fit$solution.w            # named vector of donor weights
+fit$solution.w            # donor weights (one-column matrix; rows are unit ids)
 ```
 
 If a single donor carries almost all the weight, the synthetic
@@ -185,7 +187,7 @@ combination. That isn't fatal but is worth flagging.
 **3. Inference.** Three options, in order of how strong the
 distributional assumptions are:
 
-- **Placebo / MSPE-ratio test** (`mspe_test()` in R; `synth_runner`
+- **Placebo / MSPE-ratio test** (`synth_mspe_test()` in R; `synth_runner`
   in Stata): rerun synth on each donor as if it had been treated,
   rank the actual treated unit's post/pre MSPE ratio against the
   placebo distribution. Distribution-free; widely used.
@@ -303,6 +305,7 @@ Synthetic controls are not magic. They struggle when:
   Proposition 99 worked example.
 - `vignette("synth-quickstart", package = "Synth")` — five-minute intro.
 - `vignette("inference", package = "Synth")` — split-conformal
-  intervals + placebo machinery on the canonical Basque example.
-- The `scpi`, `augsynth`, `gsynth`, and `synthdid` packages on CRAN
+  intervals + placebo machinery on the Proposition 99 example.
+- The `scpi`, `augsynth`, `gsynth`, and `synthdid` packages (`scpi`
+  and `gsynth` are on CRAN; `augsynth` and `synthdid` on GitHub)
   for the variants discussed above.
