@@ -308,6 +308,9 @@ Synthetic controls are not magic. They struggle when:
 - `vignette("synth-quickstart", package = "Synth")` — five-minute intro.
 - `vignette("inference", package = "Synth")` — split-conformal
   intervals + placebo machinery on the Proposition 99 example.
+  Both vignettes come with a GitHub install only if you add
+  `build_vignettes = TRUE` to `install_github()` (needs `knitr`,
+  `rmarkdown`, and pandoc).
 - The `scpi`, `augsynth`, `gsynth`, and `synthdid` packages (`scpi`
   and `gsynth` are on CRAN; `augsynth` and `synthdid` on GitHub)
   for the variants discussed above.

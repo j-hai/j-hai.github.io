@@ -23,7 +23,7 @@ Version 1.2-0 is the development version on GitHub; install it with `remotes::in
 * **Alternative QP backends.** Optional `quadopt = "cvxr"` (CVXR + CLARABEL) and `quadopt = "torch"` (Frank-Wolfe simplex LS via the `torch` package, with CPU/CUDA/MPS support). Both live in `Suggests:` — no required dependency.
 * **`ggplot2` support.** `autoplot()` methods on the inference and placebo objects produce publication-quality figures.
 * **Cross-platform parallel placebos.** `parallel = TRUE` does the right thing on Windows (PSOCK cluster) and unix-likes (forks).
-* **Two vignettes.** `vignette("synth-quickstart")` for a 5-minute intro and `vignette("inference")` for the inference deep dive on the Proposition 99 example.
+* **Two vignettes.** `vignette("synth-quickstart")` for a 5-minute intro and `vignette("inference")` for the inference deep dive on the Proposition 99 example. A GitHub install includes them only with `remotes::install_github("j-hai/Synth", build_vignettes = TRUE)`, which needs `knitr`, `rmarkdown`, and pandoc.
 * **Fixes and renames (October 2026).** `dataprep()` labels now follow the data when controls or periods are given out of order, `predictors.op` is applied to control units as well as the treated unit (results change only for operators other than `"mean"`), and invalid operators stop with a clear message. The placebo functions are now `synth_placebos()`, `synth_mspe_test()`, and `synth_mspe_plot()`, with a `plot()` method; the old names (`generate_placebos()` etc.) clashed with `SCtools`.
 
 ### Worked example: California's Proposition 99
