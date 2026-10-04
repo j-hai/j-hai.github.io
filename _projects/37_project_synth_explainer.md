@@ -11,8 +11,9 @@ category: methods
 This is a self-contained tutorial on the synthetic control method
 (SCM) for users coming from either R or Stata. The R commands use the
 `Synth` package; the Stata commands use the `synth` command. Both
-implement the same algorithm from Abadie and Gardeazabal (2003),
-{% cite abadie2010synthetic %}, and {% cite abadie2011synth %}.
+implement the same algorithm from Abadie and Gardeazabal (2003) and
+Abadie, Diamond, and Hainmueller (2010, 2011); see the
+[references](#references) below.
 
 ← **[Back to the Synthetic Control Methods project page](/projects/2_project_scm/)** for the package landing pages and the most recent release notes.
 **Source:** [j-hai/Synth](https://github.com/j-hai/Synth) (R) · [j-hai/synth-stata](https://github.com/j-hai/synth-stata) (Stata).
@@ -90,7 +91,8 @@ $$\hat\tau_t = Y_{1t} - \hat Y_{1t}^{\,\text{synth}}$$.
 ## Worked example: California's Proposition 99
 
 In 1988 California raised cigarette taxes via Proposition 99. The
-canonical SCM application from {% cite abadie2010synthetic %} asks:
+canonical SCM application from Abadie, Diamond, and Hainmueller
+([2010](#references)) asks:
 **how would per-capita cigarette consumption have evolved without
 the tax?** The donor pool is the 38 other US states.
 
