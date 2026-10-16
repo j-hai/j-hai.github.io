@@ -10,3 +10,7 @@ _posts/2015-10-20-math.md
 _sass/font-awesome/*.scss
 _sass/tabler-icons/*.scss
 _scripts/search.liquid.js
+
+# Written by bin/refresh_scholar_cache.rb (JSON.pretty_generate); formatting it
+# here would just be undone by the next cache refresh.
+_data/scholar_cache.json

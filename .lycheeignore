@@ -1,2 +1,10 @@
 linkedin.com
 reddit.com
+
+# URLs below work in a browser but answer automated checkers with 403 Forbidden.
+
+# Google Scholar blocks bots.
+^https://scholar\.google\.com/
+
+# Taylor & Francis (JASA) blocks bots on DOI redirects.
+^https://doi\.org/10\.1198/

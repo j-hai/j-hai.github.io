@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Conjoint Experiments
-description: 
+description:
 img: assets/img/conjoint.jpeg
 importance: 1
 category: methods
@@ -49,4 +49,3 @@ Our research also examines various aspects of conjoint design. We have also deve
 </div>
 <div class="caption">
 </div>
-

@@ -1,14 +1,13 @@
 ---
 layout: page
 title: Employment Bans
-description: 
+description:
 img: assets/img/bans.jpeg
 importance: 1
 redirect: https://immigrationlab.org/project/high-cost-of-refugee-employment-bans/
 category: applications
 related_publications: true
 ---
-
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -17,4 +16,3 @@ related_publications: true
 </div>
 <div class="caption">
 </div>
-

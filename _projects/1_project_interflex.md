@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Interaction Effects
-description: 
+description:
 img: assets/img/interflex.jpeg
 importance: 1
 category: methods
@@ -12,9 +12,8 @@ Interflex is a statistical software package, available as both an R library and 
 
 The software is based on the methods developed in {% cite hainmueller2019trust %}, and it won the Best Statistical Software Award from the Society of Political Methodology in 2023.
 
-
-
 ---
+
 [Interflex for R](https://yiqingxu.org/packages/interflex/)
 
 ---
@@ -23,7 +22,6 @@ The software is based on the methods developed in {% cite hainmueller2019trust %
 
 ---
 
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/interflex.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
@@ -31,4 +29,3 @@ The software is based on the methods developed in {% cite hainmueller2019trust %
 </div>
 <div class="caption">
 </div>
-

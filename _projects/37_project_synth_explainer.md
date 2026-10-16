@@ -42,7 +42,7 @@ price). The textbook problem:
 - **Regression with unit fixed effects** projects the treated unit
   onto an additive structure that may not hold.
 
-**Synthetic controls** construct a *weighted combination* of donor
+**Synthetic controls** construct a _weighted combination_ of donor
 units that mimics the pre-treatment trajectory of the treated unit on
 the outcome and on a set of predictors. The weighted donor pool —
 the "synthetic control" — is then taken as the counterfactual after
@@ -78,8 +78,8 @@ $$
 where $$X_{1k}$$ is the treated unit's value of predictor $$k$$
 (typically pre-period averages of the outcome plus other covariates),
 $$X_{0k}$$ is the row of donor values, and $$v_k$$ are
-**predictor weights** chosen to minimize the *pre-treatment mean
-squared prediction error* on the outcome. There are two nested
+**predictor weights** chosen to minimize the _pre-treatment mean
+squared prediction error_ on the outcome. There are two nested
 optimizations: an outer search over $$v$$ and an inner quadratic
 program for $$w$$. `Synth` handles both.
 
@@ -193,8 +193,8 @@ distributional assumptions are:
   in Stata): rerun synth on each donor as if it had been treated,
   rank the actual treated unit's post/pre MSPE ratio against the
   placebo distribution. Distribution-free; widely used.
-- **Split-conformal prediction band** (`synth_inference(method =
-  "conformal")`, new in `Synth 1.2-0`): finite-sample valid
+- **Split-conformal prediction band**
+  (`synth_inference(method = "conformal")`, new in `Synth 1.2-0`): finite-sample valid
   prediction intervals around the synthetic counterfactual under
   exchangeability of pre-period residuals. Constant-width band; no
   parametric residual model.
@@ -262,11 +262,11 @@ many treated units with a clear pre-period → `synthdid`.
   post-period gap, ideally with a placebo p-value or conformal band.
 - **Multiple treated units fit one at a time.** If you have several
   treated units (different states adopting a policy in different
-  years), fitting `synth` one at a time and averaging is *not* the
+  years), fitting `synth` one at a time and averaging is _not_ the
   same as `gsynth` or `synthdid`, and standard placebo inference
   doesn't carry over.
 
-## When *not* to use synthetic controls
+## When _not_ to use synthetic controls
 
 Synthetic controls are not magic. They struggle when:
 
@@ -287,17 +287,17 @@ Synthetic controls are not magic. They struggle when:
 
 - Abadie, A., and Gardeazabal, J. (2003). [The economic costs of
   conflict: A case study of the Basque country](https://www.aeaweb.org/articles?id=10.1257/000282803321455188).
-  *American Economic Review*, 93(1), 113–132.
+  _American Economic Review_, 93(1), 113–132.
 - Abadie, A., Diamond, A., and Hainmueller, J. (2010). [Synthetic
   control methods for comparative case studies](https://doi.org/10.1198/jasa.2009.ap08746).
-  *Journal of the American Statistical Association*, 105(490), 493–505.
+  _Journal of the American Statistical Association_, 105(490), 493–505.
 - Abadie, A., Diamond, A., and Hainmueller, J. (2011). [Synth: An R
   package for synthetic control methods in comparative case
   studies](https://www.jstatsoft.org/article/view/v042i13).
-  *Journal of Statistical Software*, 42(13), 1–17.
+  _Journal of Statistical Software_, 42(13), 1–17.
 - Chernozhukov, V., Wuthrich, K., and Zhu, Y. (2021). An exact and
   robust conformal inference method for counterfactual and synthetic
-  controls. *Journal of the American Statistical Association*,
+  controls. _Journal of the American Statistical Association_,
   116(536), 1849–1864.
 
 ## See also

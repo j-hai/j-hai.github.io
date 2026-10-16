@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Secondary Migration
-description: 
+description:
 img: assets/img/secondary.jpeg
 importance: 1
 category: applications
@@ -18,4 +18,3 @@ In {% cite mossaad2020migration %}, we leverage nationwide population-level micr
 </div>
 <div class="caption">
 </div>
-

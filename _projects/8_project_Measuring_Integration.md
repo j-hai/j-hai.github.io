@@ -1,13 +1,12 @@
 ---
 layout: page
 title: Measuring Integration
-description:  
+description:
 img: assets/img/measureintegration.jpeg
 importance: 1
 category: methods
 related_publications: true
 ---
-
 
 ## Measuring Integration
 
@@ -57,4 +56,3 @@ Discover how the IPL-12 Integration Index is advancing global research on immigr
 </div>
 <div class="caption">
 </div>
-

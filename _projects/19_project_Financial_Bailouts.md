@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Financial Bailouts
-description: 
+description:
 img: assets/img/bailout.jpeg
 importance: 1
 category: applications
@@ -21,4 +21,3 @@ In {% cite bansak2020leftright %}, we explore the ideological divide in European
 </div>
 <div class="caption">
 </div>
-

@@ -40,7 +40,7 @@ Two common approaches and their failure modes:
 
 - **Inverse-probability weighting (IPW)** fits a propensity-score
   model first, then weights by the inverse score. Balance is achieved
-  *on average* — but in any particular sample, the resulting
+  _on average_ — but in any particular sample, the resulting
   covariate moments rarely match exactly. You end up running
   diagnostics, tweaking the propensity-score specification, and
   hoping.
@@ -72,8 +72,8 @@ $$
 where $$c_k(X)$$ are user-specified moment functions (typically
 $$X_j$$ for first moments, $$X_j^2$$ for variances, $$X_j X_l$$ for
 co-moments) and $$m_k$$ are the corresponding treated-group totals.
-The objective is the Kullback–Leibler divergence from $$q$$ — *keep
-the weights as close to uniform as you can*, subject to the balance
+The objective is the Kullback–Leibler divergence from $$q$$ — _keep
+the weights as close to uniform as you can_, subject to the balance
 constraints.
 
 Solving the dual is a finite-dimensional convex problem
@@ -84,11 +84,11 @@ are feasible.
 The same machinery handles two other estimands by changing what's
 reweighted and what's targeted:
 
-| estimand | who is reweighted | target moments |
-|---|---|---|
-| ATT  | controls           | treated-group means |
-| ATC  | treated            | control-group means |
-| ATE  | both groups        | overall sample means |
+| estimand | who is reweighted | target moments       |
+| -------- | ----------------- | -------------------- |
+| ATT      | controls          | treated-group means  |
+| ATC      | treated           | control-group means  |
+| ATE      | both groups       | overall sample means |
 
 ## Worked example: Lalonde NSW vs. PSID
 
@@ -222,13 +222,13 @@ When reporting an entropy-balancing estimate, include at least:
 `ebalance(..., estimand = ...)` lets you pick what gets reweighted:
 
 - **ATT**: controls reweighted to look like treated.
-  *Use this when* you want the effect on those who actually got
+  _Use this when_ you want the effect on those who actually got
   treatment. Most policy-evaluation work falls here.
 - **ATC**: treated reweighted to look like controls.
-  *Use this when* the policy question is about extending a program to
+  _Use this when_ the policy question is about extending a program to
   non-recipients. Be honest about the extrapolation involved.
 - **ATE**: both groups reweighted to the overall sample.
-  *Use this when* you want a population-level claim and you trust
+  _Use this when_ you want a population-level claim and you trust
   that the treatment effect is stable across the covariate
   distribution.
 
@@ -254,7 +254,7 @@ groups swapped and combine the resulting weight vectors.
   under ATC; control side only under ATE) and is mostly there for
   backward compatibility.
 - **Pre-period outcomes in the constraints.** If you balance on
-  *every* pre-period outcome and run a difference-in-differences,
+  _every_ pre-period outcome and run a difference-in-differences,
   the placebo period is mechanically zero. That isn't a bug, but it
   also isn't a falsification test. Leave at least one pre-period out
   of the constraints if you want a placebo check.
@@ -291,7 +291,7 @@ constraints flattens the placebo. The lesson: weighted DID is honest
 about what it fixes (balance on observed covariates) and what it does
 not (parallel trends).
 
-## When *not* to use entropy balancing
+## When _not_ to use entropy balancing
 
 Entropy balancing is not magic. It cannot fix:
 
@@ -313,10 +313,10 @@ not as a one-step fix.
 - Hainmueller, J. (2012). [Entropy balancing for causal effects: A
   multivariate reweighting method to produce balanced samples in
   observational studies](https://doi.org/10.1093/pan/mpr025).
-  *Political Analysis*, 20(1), 25–46.
+  _Political Analysis_, 20(1), 25–46.
 - Hainmueller, J. and Xu, Y. (2013). [ebalance: A Stata package for
   entropy balancing](https://www.jstatsoft.org/article/view/v054i07).
-  *Journal of Statistical Software*, 54(7), 1–18.
+  _Journal of Statistical Software_, 54(7), 1–18.
 
 ## See also
 

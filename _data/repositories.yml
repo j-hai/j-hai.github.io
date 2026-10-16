@@ -6,20 +6,18 @@
 repo_description_lines_max: 2
 
 github_repos:
-- j-hai/ebal
-- j-hai/ebal-stata
-- j-hai/Synth
-- j-hai/synth-stata
-- j-hai/KRLS
-- j-hai/krls-stata
-- xuyiqing/interflex
-- xuyiqing/sconjoint
-- astrezhnev/conjointsdt
-- apoorvalal/EBAL-in-CVXR
-- apoorvalal/synthlearners
-- lukesonnet/KRLS
-
-
+  - j-hai/ebal
+  - j-hai/ebal-stata
+  - j-hai/Synth
+  - j-hai/synth-stata
+  - j-hai/KRLS
+  - j-hai/krls-stata
+  - xuyiqing/interflex
+  - xuyiqing/sconjoint
+  - astrezhnev/conjointsdt
+  - apoorvalal/EBAL-in-CVXR
+  - apoorvalal/synthlearners
+  - lukesonnet/KRLS
 
 #  - alshedivat/al-folio
 #  - jekyll/jekyll

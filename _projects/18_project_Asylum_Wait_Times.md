@@ -1,14 +1,13 @@
 ---
 layout: page
 title: Asylum Wait Times
-description: 
+description:
 img: assets/img/waittimes.jpeg
 importance: 1
 redirect: https://immigrationlab.org/project/lives-on-hold-how-asylum-wait-times-impact-employment/
 category: applications
 related_publications: true
 ---
-
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -17,4 +16,3 @@ related_publications: true
 </div>
 <div class="caption">
 </div>
-

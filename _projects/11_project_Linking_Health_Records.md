@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Linking Health Records
-description: 
+description:
 img: assets/img/linkage.jpeg
 importance: 1
 category: methods
@@ -19,4 +19,3 @@ In {% cite orr2024linking %}, we utilize nationwide Medicaid claims data to deve
 </div>
 <div class="caption">
 </div>
-

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Entropy Balancing
-description: 
+description:
 img: assets/img/entropy.jpg
 importance: 1
 category: methods
@@ -29,11 +29,11 @@ That's the full promise of the package: balance the covariates, get weights, run
 
 ### Which estimand?
 
-| `estimand` | who gets reweighted | answers |
-|---|---|---|
-| `"ATT"` (default) | controls           | "what was the effect on those who got treatment?" |
-| `"ATC"`           | treated            | "what would the effect have been on the controls?" |
-| `"ATE"`           | both               | "what is the average effect across the population?" |
+| `estimand`        | who gets reweighted | answers                                             |
+| ----------------- | ------------------- | --------------------------------------------------- |
+| `"ATT"` (default) | controls            | "what was the effect on those who got treatment?"   |
+| `"ATC"`           | treated             | "what would the effect have been on the controls?"  |
+| `"ATE"`           | both                | "what is the average effect across the population?" |
 
 Always read weights via `weights(fit)`. It returns a length-`n` vector aligned to the original `Treatment`/`X` and routes the per-side semantics correctly.
 
@@ -140,9 +140,9 @@ coef(lm(re78 ~ treat, data = lalonde, weights = w))[2]
 
 ## Combining ebal with difference-in-differences
 
-A common applied pattern is to use ebal as the *first stage* of a DID design: ebal-weighted DID handles unobserved time-invariant confounders (via the difference) and observed covariate imbalance (via the weights) simultaneously. The Lalonde data has earnings in 1974, 1975, and 1978 — so we can check parallel trends with a 1975 placebo.
+A common applied pattern is to use ebal as the _first stage_ of a DID design: ebal-weighted DID handles unobserved time-invariant confounders (via the difference) and observed covariate imbalance (via the weights) simultaneously. The Lalonde data has earnings in 1974, 1975, and 1978 — so we can check parallel trends with a 1975 placebo.
 
-We deliberately balance on **demographics only** (age, education, race, marital status, no-degree status) and *leave prior earnings out of the constraints*. The point is to see whether DID + ebal can absorb the time-invariant earnings level difference between NSW and PSID without having seen those earnings during balancing.
+We deliberately balance on **demographics only** (age, education, race, marital status, no-degree status) and _leave prior earnings out of the constraints_. The point is to see whether DID + ebal can absorb the time-invariant earnings level difference between NSW and PSID without having seen those earnings during balancing.
 
 ```r
 # 1) Balance on demographics only
@@ -182,18 +182,19 @@ The DID + ebal estimate **+2181** (95% bootstrap CI [+414, +3857]) brackets the 
 
 ## What's new in `ebal` 0.3-0 (May 2026)
 
-* **ATT / ATE / ATC estimands** via the new `estimand` argument on `ebalance()`. `weights(fit)` returns the right length-`n` vector for each.
-* **`balance_table(fit)`** — exported, with explicit `mean_treated_pre/post`, `mean_control_pre/post`, `diff_pre/post`, `std_diff_pre/post`, `pct_reduction` columns. The same numbers feed `summary()`, `tidy()`, `plot()`, and `autoplot()`.
-* **`diagnostics(fit)`** — friendly "is my fit okay?" report with PASS / WARN / FAIL flags for ESS, balance, convergence, and trim feasibility.
-* **Weak-fit warnings at fit time** when ESS is below 30% of side n, max/mean weight ratio is above 10, or the solver didn't converge. Suppressible via `options(ebal.warn_weak_fit = FALSE)`.
-* **Two new vignettes:** `vignette("estimands")` and `vignette("outcome-models")`.
-* **Autodiff solver** (advanced, opt-in): `method = "autodiff"` runs BFGS on `torch`-computed gradients instead of Newton-Raphson. More stable on poorly conditioned dual losses; **contributed by Apoorva Lal**, ported with attribution from his fork at [github.com/apoorvalal/ebal](https://github.com/apoorvalal/ebal). Apoorva is now listed as `aut` on the package.
+- **ATT / ATE / ATC estimands** via the new `estimand` argument on `ebalance()`. `weights(fit)` returns the right length-`n` vector for each.
+- **`balance_table(fit)`** — exported, with explicit `mean_treated_pre/post`, `mean_control_pre/post`, `diff_pre/post`, `std_diff_pre/post`, `pct_reduction` columns. The same numbers feed `summary()`, `tidy()`, `plot()`, and `autoplot()`.
+- **`diagnostics(fit)`** — friendly "is my fit okay?" report with PASS / WARN / FAIL flags for ESS, balance, convergence, and trim feasibility.
+- **Weak-fit warnings at fit time** when ESS is below 30% of side n, max/mean weight ratio is above 10, or the solver didn't converge. Suppressible via `options(ebal.warn_weak_fit = FALSE)`.
+- **Two new vignettes:** `vignette("estimands")` and `vignette("outcome-models")`.
+- **Autodiff solver** (advanced, opt-in): `method = "autodiff"` runs BFGS on `torch`-computed gradients instead of Newton-Raphson. More stable on poorly conditioned dual losses; **contributed by Apoorva Lal**, ported with attribution from his fork at [github.com/apoorvalal/ebal](https://github.com/apoorvalal/ebal). Apoorva is now listed as `aut` on the package.
 
 The previous release (0.2.1, April 2026) added the formula interface, `print()` / `summary()` / `plot()` / `weights()` S3 methods, and numerical hardening for `ebalance.trim()`.
 
 The Stata routine was also updated in April 2026 to version 1.5.5 with bug fixes, a new `quietly` option, a `replace` option for `gen()`, and a cap on the linear predictor before `exp()` to prevent `Inf → NaN` propagation. No numerical changes; verified byte-for-byte against the 1.5.3 baseline. Source on [GitHub](https://github.com/j-hai/ebal-stata).
 
 ---
+
 [Entropy Balancing for R](https://search.r-project.org/CRAN/refmans/ebal/html/ebalance.html) — also on [GitHub](https://github.com/j-hai/ebal)
 
 ---

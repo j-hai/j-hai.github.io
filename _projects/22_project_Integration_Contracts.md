@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Integration Contracts
-description: 
+description:
 img: assets/img/frenchcontracts.jpeg
 importance: 1
 category: applications
@@ -23,4 +23,3 @@ This study highlights the potential and limitations of integration contracts in 
 </div>
 <div class="caption">
 </div>
-
