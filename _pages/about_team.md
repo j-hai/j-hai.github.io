@@ -3,11 +3,12 @@
 - [IPL Team](https://immigrationlab.org/team/)
 
 #### Postdoctoral Researchers
+
 - [Linna Martén](https://sites.google.com/site/linnamarten/home) (Uppsala University)
 - [Niklas Harder](https://www.dezim-institut.de/en/employees/person-detail/niklas-harder/) (Deutsches Zentrum für Integrations- und Migrationsforschung)
 - [Daniel Masterson](https://www.polsci.ucsb.edu/people/daniel-masterson) (University of California Santa Barbara)
 - [Alexandra Siegel](https://aasiegel.github.io/website/website-main/) (University of Colorado Boulder)
-- [Vasil (Vasco) Yasenov](https://yasenov.com/) (Adobe)
+- [Vasil (Vasco) Yasenov](https://vyasenov.github.io/) (Adobe)
 - [Nicholas Adams-Cohen](https://nadamscohen.com/) (Deloitte)
 - [Elisabeth Paulson](https://elisabethpaulson.github.io/) (Harvard Business School)
 - [Lilla Orr](https://lillaorr.com/) (University of Richmond)
@@ -15,8 +16,8 @@
 - [Anand Kalvit](https://sites.google.com/view/anandkalvit/bio) (Amazon)
 - [Ahmet Gulek](https://ahmetgulek.github.io/) (ongoing)
 
-
 #### Ph.D. Students (Main Dissertation Advisor)
+
 - [Chad Hazlett](https://www.chadhazlett.com/) (University of California Los Angeles)
 - [Yiqing Xu](https://yiqingxu.org/) (Stanford University)
 - [Mathilde Emeriau](https://mathildeemeriau.com/) (London School of Economics)
@@ -24,6 +25,7 @@
 - [Apoorva Lal](https://apoorvalal.github.io/) (Netflix)
 
 #### Ph.D. Students (Dissertation Advisor)
+
 - [Greg Distelhorst](https://www.gregdistelhorst.com/) (Oxford University Said Business School)
 - [Michael Sances](https://msances.github.io/) (University of Memphis)
 - [Jeremy Ferwerda](https://www.jeremyferwerda.com/) (Dartmouth College)

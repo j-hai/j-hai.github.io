@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Kernel ML Methods
-description: 
+description:
 img: assets/img/kernel.jpg
 importance: 1
 category: methods

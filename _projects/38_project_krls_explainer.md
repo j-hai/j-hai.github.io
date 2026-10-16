@@ -54,7 +54,7 @@ options each have their own failure modes:
    $$\partial \hat E[Y \mid X] / \partial X_j$$ varies across the
    covariate space.
 3. Reports **closed-form analytical standard errors** for the
-   *average* marginal effects, together with the full distribution of
+   _average_ marginal effects, together with the full distribution of
    pointwise derivatives so heterogeneity is visible alongside the
    summary statistic.
 
@@ -91,7 +91,7 @@ the implied $$\hat f$$ lies in the reproducing kernel Hilbert space
 The pointwise derivative
 $$\partial \hat f / \partial X_j$$ at any data point comes out of
 $$\hat c$$ in closed form. This is the headline output: not a single
-coefficient per predictor, but a *distribution* of marginal effects
+coefficient per predictor, but a _distribution_ of marginal effects
 across observations.
 
 ## Worked example
@@ -140,7 +140,7 @@ For each predictor, `summary(fit)` reports:
 In this example the AME of `x1` is near zero — the derivative
 $$\sin'(x_1) = \cos(x_1)$$ integrates to zero over a full sine
 period, since $$\int_{-\pi}^{\pi}\cos(t)\,dt = \sin(\pi) - \sin(-\pi)
-= 0$$. But the *pointwise* effects span the full range of $$\cos$$,
+= 0$$. But the _pointwise_ effects span the full range of $$\cos$$,
 from $$-1$$ to $$+1$$ across the observed values of $$x_1$$. The
 AME of `x2` recovers the true slope of $$0.5$$. The distribution
 of $$x_1$$'s marginal effects is exactly the heterogeneity an OLS
@@ -269,7 +269,7 @@ what you need:
   for most applied work at moderate-to-large $$n$$: predictions,
   average marginal effects, and analytical standard errors are all
   available and the calibration matches a parametric bootstrap.
-  Strictly speaking these are *conditional* SEs — they condition on
+  Strictly speaking these are _conditional_ SEs — they condition on
   the selected landmarks, the chosen $$\lambda$$, and the feature
   map — so use the exact path when a paper explicitly hinges on
   the historical KRLS inference. See
@@ -286,20 +286,20 @@ what you need:
   Standardize predictors before fitting, or pass them as a matrix
   with comparable scales. The package does this internally by
   default.
-- **Marginal effects average over the *sample*, not the population.**
+- **Marginal effects average over the _sample_, not the population.**
   The AME of a covariate is the mean pointwise derivative across
-  *your* data points. If your sample is selected, the AME reflects
+  _your_ data points. If your sample is selected, the AME reflects
   that selection.
 - **Categorical predictors.** KRLS expects numeric predictors. For
   categories, expand to dummies before passing to `krls()`. The
   package will return one marginal effect per dummy.
 
-## When *not* to use KRLS
+## When _not_ to use KRLS
 
 - **You need exact KRLS inference at very large $$n$$.** The Nyström
   path (`approx = "nystrom"`) handles large samples well for nearly
   every applied use case. The exception is when the analysis
-  explicitly relies on the *exact* analytical inference from
+  explicitly relies on the _exact_ analytical inference from
   Hainmueller and Hazlett (2014); for that, the $$n \approx 5{,}000$$
   ceiling on the exact path still applies.
 - **You only care about prediction.** If you don't need pointwise
@@ -314,11 +314,11 @@ what you need:
 - Hainmueller, J., and Hazlett, C. (2014). [Kernel regularized least
   squares: Reducing misspecification bias with a flexible and
   interpretable machine learning approach](https://doi.org/10.1093/pan/mpt019).
-  *Political Analysis*, 22(2), 143–168.
+  _Political Analysis_, 22(2), 143–168.
 - Ferwerda, J., Hainmueller, J., and Hazlett, C. (2017). [Kernel-Based
   Regularized Least Squares in R (KRLS) and
   Stata](https://www.jstatsoft.org/article/view/v079i03).
-  *Journal of Statistical Software*, 79(3), 1–26.
+  _Journal of Statistical Software_, 79(3), 1–26.
 
 ## See also
 

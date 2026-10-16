@@ -1,13 +1,12 @@
 ---
 layout: page
 title: Immigration Attitudes
-description: 
+description:
 img: assets/img/attitutdes.jpeg
 importance: 1
 category: applications
 related_publications: true
 ---
-
 
 ## Public Attitudes Towards Immigration
 
@@ -15,18 +14,18 @@ We explore why native populations oppose or support immigration, testing various
 
 ### Attitudes Towards General Immigration
 
-Key studies in this area include:  
-- {% cite hainmueller2006learning %}: This paper explores how education influences attitudes toward trade.  
-- {% cite hainmueller2007educated %}: This study examines how education shapes attitudes toward immigration.  
-- {% cite hainmueller2010attitudes %}: This research investigates how attitudes toward immigration vary based on the skill level of migrants, testing economic theories of attitude formation.  
-- {% cite hainmueller2015concerns %}: This study analyzes whether attitudes toward immigration are driven by concerns about labor market competition.  
+Key studies in this area include:
+
+- {% cite hainmueller2006learning %}: This paper explores how education influences attitudes toward trade.
+- {% cite hainmueller2007educated %}: This study examines how education shapes attitudes toward immigration.
+- {% cite hainmueller2010attitudes %}: This research investigates how attitudes toward immigration vary based on the skill level of migrants, testing economic theories of attitude formation.
+- {% cite hainmueller2015concerns %}: This study analyzes whether attitudes toward immigration are driven by concerns about labor market competition.
 - {% cite hainmueller2015hidden %}: This research examines how attitudes toward immigration vary based on migrants' attributes, testing general theories of attitude formation and exploring consensus on immigration attitudes across voter subgroups.
-
-
 
 ### Attitudes Towards Refugees and Asylum Seekers
 
 Key studies in this area include:
+
 - {% cite bansak2016economic %}: This paper analyzes how economic, humanitarian, and religious concerns shape European attitudes toward asylum seekers.
 - {% cite bansak2017europeans %}: This study examines European preferences for asylum policies, emphasizing the impact of fairness of sharing mechanisms.
 - {% cite bansak2023europeans %}: This research explores long-term shifts in European attitudes toward asylum seekers within changing geopolitical contexts.
@@ -34,8 +33,7 @@ Key studies in this area include:
 
 ### Review Artcile
 
-In {% cite hainmueller2014public %} we provide a summary of research on public attitudes towards immigration. 
-
+In {% cite hainmueller2014public %} we provide a summary of research on public attitudes towards immigration.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -44,4 +42,3 @@ In {% cite hainmueller2014public %} we provide a summary of research on public a
 </div>
 <div class="caption">
 </div>
-

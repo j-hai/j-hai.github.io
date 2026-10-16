@@ -4,12 +4,12 @@ Google Scholar aggressively rate-limits scrapers, which made the
 `google_scholar_citations` Liquid tag fall back to `"N/A"` on every
 build. The fix:
 
-* **`_plugins/google-scholar-citations.rb`** now reads from
+- **`_plugins/google-scholar-citations.rb`** now reads from
   `_data/scholar_cache.json` first, only scrapes Scholar live on a
   cache miss, and only emits `"N/A"` if both lookups fail.
-* **`_data/scholar_cache.json`** is the on-disk cache. JSON keyed by
+- **`_data/scholar_cache.json`** is the on-disk cache. JSON keyed by
   Google Scholar `article_id` → `{ count, fetched_at }`.
-* **`bin/refresh_scholar_cache.rb`** is the manual refresh tool.
+- **`bin/refresh_scholar_cache.rb`** is the manual refresh tool.
 
 ## Refresh the cache
 
@@ -26,11 +26,11 @@ ruby bin/refresh_scholar_cache.rb \
 
 ## When to run
 
-* Manually whenever you want updated numbers (recommended monthly).
-* The script preserves existing cache values on Scholar errors and
+- Manually whenever you want updated numbers (recommended monthly).
+- The script preserves existing cache values on Scholar errors and
   writes after each successful fetch, so an interrupted run keeps
   the progress made so far. Re-run it later for the rest.
-* If you want this fully automated, add a scheduled GitHub Actions
+- If you want this fully automated, add a scheduled GitHub Actions
   workflow that runs this script and commits the resulting JSON
   diff. (Not added by default because cron-driven scrapers tend to
   trigger Scholar's bot defenses harder than residential IPs.)

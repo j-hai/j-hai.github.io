@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ethical Supply Chains
-description: 
+description:
 img: assets/img/supplychain.jpeg
 importance: 1
 category: applications
@@ -25,4 +25,3 @@ Both studies underscore the power and limits of private governance mechanisms to
 </div>
 <div class="caption">
 </div>
-

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Refugee Housing
-description: 
+description:
 img: assets/img/privatehost.jpeg
 importance: 1
 category: applications
@@ -21,4 +21,3 @@ Our results reveal that private hosting significantly improves social, psycholog
 </div>
 <div class="caption">
 </div>
-

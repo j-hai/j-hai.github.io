@@ -1,14 +1,13 @@
 ---
 layout: page
 title: Language Training
-description: 
+description:
 img: assets/img/langtrain.jpeg
 importance: 1
 redirect: https://immigrationlab.org/project/preparing-for-the-next-crisis-lessons-from-germanys-language-programs-for-refugees/
 category: applications
 related_publications: true
 ---
-
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -17,4 +16,3 @@ related_publications: true
 </div>
 <div class="caption">
 </div>
-

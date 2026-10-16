@@ -14,17 +14,17 @@ on:
   schedule:
     # Daily at 04:17 UTC. Off-peak so we're less likely to share the
     # Scholar IP block with someone else who's also scraping.
-    - cron: '17 4 * * *'
+    - cron: "17 4 * * *"
   workflow_dispatch:
     inputs:
       max:
-        description: 'Max successful fetches per run'
+        description: "Max successful fetches per run"
         required: false
-        default: '15'
+        default: "15"
       force:
-        description: 'Re-fetch already-cached entries'
+        description: "Re-fetch already-cached entries"
         required: false
-        default: 'false'
+        default: "false"
 
 permissions:
   contents: write
@@ -38,7 +38,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: "3.2"
 
       - name: Install gems used by the refresh script
         run: gem install nokogiri

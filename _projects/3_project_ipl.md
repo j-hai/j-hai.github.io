@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Immigration Policy Lab (IPL)
-description: 
+description:
 img: assets/img/IPL.jpeg
 redirect: https://immigrationlab.org/
 importance: 3

@@ -16,4 +16,3 @@ related_publications: true
 </div>
 <div class="caption">
 </div>
-

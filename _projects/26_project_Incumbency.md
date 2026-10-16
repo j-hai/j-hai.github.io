@@ -1,13 +1,12 @@
 ---
 layout: page
-title: Incumbency Advantage 
-description: 
+title: Incumbency Advantage
+description:
 img: assets/img/incumbency.jpeg
 importance: 1
 category: applications
 related_publications: true
 ---
-
 
 ### Incumbency as a Source of Spillover Effects in Mixed Electoral Systems
 
@@ -17,7 +16,6 @@ In {% cite hainmueller2008incumbency %}, this study demonstrates that incumbency
 
 In {% cite hainmueller2015assessing %}, the regression discontinuity (RD) design is used to estimate the incumbency advantage in tightly contested elections. While RD provides robust local estimates for 50-50 races, its applicability to less competitive districts has been uncertain. This study introduces a novel method to extend RD estimates to elections where the winner secured up to 57.5% of the two-party vote. The findings confirm that the incumbency advantage remains consistent across both competitive and less competitive races, enhancing the external validity of RD estimates.
 
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/incumbency2.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
@@ -25,4 +23,3 @@ In {% cite hainmueller2015assessing %}, the regression discontinuity (RD) design
 </div>
 <div class="caption">
 </div>
-

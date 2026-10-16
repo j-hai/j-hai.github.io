@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ethnic Networks
-description: 
+description:
 img: assets/img/ethnicnetworks.jpeg
 importance: 1
 category: applications
@@ -12,8 +12,6 @@ In {% cite marten2019ethnic %}, we investigate the role of ethnic networks in pr
 
 We find that refugees resettled in areas with strong co-ethnic networks are significantly more likely to secure employment. Further mechanism tests suggest that spatially concentrated ethnic networks facilitate the sharing of information about job opportunities, catalyzing the economic integration of refugees.
 
-
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/ethnicnetworks.jpeg" title="example image" class="img-fluid rounded z-depth-1" %}
@@ -21,4 +19,3 @@ We find that refugees resettled in areas with strong co-ethnic networks are sign
 </div>
 <div class="caption">
 </div>
-

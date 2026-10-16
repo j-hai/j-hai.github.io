@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Active Labor Market Policies
-description: 
+description:
 img: assets/img/caseload.jpeg
 importance: 1
 category: applications
@@ -10,12 +10,11 @@ related_publications: true
 
 ### Do Lower Caseloads Improve the Performance of Public Employment Services?
 
-In {% cite hainmueller2016lower %}, the caseworker-to-client ratio emerges as a crucial yet understudied policy parameter affecting the quality and cost of public employment services designed to help job seekers find employment. This study exploits a large-scale pilot program conducted by Germany's employment agency, which hired 490 additional caseworkers across 14 of its 779 offices.  
+In {% cite hainmueller2016lower %}, the caseworker-to-client ratio emerges as a crucial yet understudied policy parameter affecting the quality and cost of public employment services designed to help job seekers find employment. This study exploits a large-scale pilot program conducted by Germany's employment agency, which hired 490 additional caseworkers across 14 of its 779 offices.
 
-The findings reveal that lowering caseloads led to reduced local unemployment rates and shorter unemployment durations, alongside a higher re-employment rate. Analyzing the underlying mechanisms, the study shows that offices with reduced caseloads enhanced their performance by increasing monitoring, imposing more sanctions, intensifying job search efforts, and registering additional vacancies.  
+The findings reveal that lowering caseloads led to reduced local unemployment rates and shorter unemployment durations, alongside a higher re-employment rate. Analyzing the underlying mechanisms, the study shows that offices with reduced caseloads enhanced their performance by increasing monitoring, imposing more sanctions, intensifying job search efforts, and registering additional vacancies.
 
 These results highlight the potential of adjusting caseworker caseloads to improve the effectiveness of public employment services and better support job seekers.
-
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -24,4 +23,3 @@ These results highlight the potential of adjusting caseworker caseloads to impro
 </div>
 <div class="caption">
 </div>
-
